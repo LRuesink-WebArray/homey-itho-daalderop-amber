@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Hot water mode",
+    "nl": "Warm water modus"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle",
+  "icon": "/assets/icons/hot-water.svg",
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Hot water mode enabled",
+    "nl": "Warm water modus ingeschakeld"
+  },
+  "insightsTitleFalse": {
+    "en": "Hot water mode disabled",
+    "nl": "Warm water modus uitgeschakeld"
+  }
+}

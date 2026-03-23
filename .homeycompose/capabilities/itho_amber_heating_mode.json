@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Heating mode",
+    "nl": "Verwarmingsmodus"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle",
+  "icon": "/assets/icons/heating.svg",
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Heating mode enabled",
+    "nl": "Verwarmingsmodus ingeschakeld"
+  },
+  "insightsTitleFalse": {
+    "en": "Heating mode disabled",
+    "nl": "Verwarmingsmodus uitgeschakeld"
+  }
+}

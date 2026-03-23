@@ -1,0 +1,19 @@
+{
+  "type": "mdns-sd",
+  "mdns-sd": {
+    "name": "esphomelib",
+    "protocol": "tcp"
+  },
+  "id": "{{host}}",
+  "conditions": [
+    [
+      {
+        "field": "txt.friendly_name",
+        "match": {
+          "type": "string",
+          "value": "Itho Daalderop Amber"
+        }
+      }
+    ]
+  ]
+}

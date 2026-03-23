@@ -1,0 +1,31 @@
+{
+  "id": "set_pump_speed_dhw",
+  "title": {
+    "en": "Set pump speed hot water",
+    "nl": "Stel pompsnelheid warm water in"
+  },
+  "titleFormatted": {
+    "en": "Set pump speed hot water to [[speed]]",
+    "nl": "Stel pompsnelheid warm water in op [[speed]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "dropdown",
+      "name": "speed",
+      "title": {
+        "en": "Speed",
+        "nl": "Snelheid"
+      },
+      "values": [
+        { "id": "High", "label": { "en": "High", "nl": "Hoog" } },
+        { "id": "Medium", "label": { "en": "Medium", "nl": "Midden" } },
+        { "id": "Low", "label": { "en": "Low", "nl": "Laag" } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Hot water heating",
+    "nl": "Warm water opwarmen"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/hot-water.svg",
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Hot water heating started",
+    "nl": "Warm water opwarmen gestart"
+  },
+  "insightsTitleFalse": {
+    "en": "Hot water heating stopped",
+    "nl": "Warm water opwarmen gestopt"
+  }
+}

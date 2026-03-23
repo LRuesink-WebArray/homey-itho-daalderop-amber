@@ -1,0 +1,30 @@
+{
+  "id": "set_cooling_mode",
+  "title": {
+    "en": "Set cooling mode",
+    "nl": "Stel koeling modus in"
+  },
+  "titleFormatted": {
+    "en": "Set cooling mode to [[mode]]",
+    "nl": "Stel koeling modus in op [[mode]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "dropdown",
+      "name": "mode",
+      "title": {
+        "en": "Mode",
+        "nl": "Modus"
+      },
+      "values": [
+        { "id": "on", "label": { "en": "On", "nl": "Aan" } },
+        { "id": "off", "label": { "en": "Off", "nl": "Uit" } }
+      ]
+    }
+  ]
+}

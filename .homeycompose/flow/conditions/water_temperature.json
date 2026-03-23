@@ -1,0 +1,33 @@
+{
+  "id": "water_temperature",
+  "title": {
+    "en": "Water outlet temperature !{{is|is not}} above ...",
+    "nl": "Wateruitlaattemperatuur !{{is|is niet}} hoger dan ..."
+  },
+  "titleFormatted": {
+    "en": "Water outlet temperature !{{is|is not}} above [[temperature]] °C",
+    "nl": "Wateruitlaattemperatuur !{{is|is niet}} hoger dan [[temperature]] °C"
+  },
+  "hint": {
+    "en": "Check if the water outlet temperature is above a specific value.",
+    "nl": "Controleer of de wateruitlaattemperatuur hoger is dan een specifieke waarde."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "number",
+      "name": "temperature",
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur"
+      },
+      "min": 0,
+      "max": 80,
+      "step": 0.5
+    }
+  ]
+}

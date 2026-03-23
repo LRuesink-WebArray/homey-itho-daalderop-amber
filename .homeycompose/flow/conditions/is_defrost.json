@@ -1,0 +1,18 @@
+{
+  "id": "is_defrost",
+  "title": {
+    "en": "Defrost !{{is|is not}} active",
+    "nl": "Ontdooien !{{is|is niet}} actief"
+  },
+  "hint": {
+    "en": "Check if the heat pump is currently defrosting.",
+    "nl": "Controleer of de warmtepomp momenteel aan het ontdooien is."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    }
+  ]
+}

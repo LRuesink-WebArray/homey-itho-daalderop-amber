@@ -1,0 +1,147 @@
+{
+  "name": {
+    "en": "Itho Daalderop Amber Heat Pump",
+    "nl": "Itho Daalderop Amber Warmtepomp"
+  },
+  "class": "sensor",
+  "discovery": "ithodaalderop-amber",
+  "capabilities": [
+    "measure_temperature.heating_cooling",
+    "onoff",
+    "measure_temperature",
+    "target_temperature",
+    "itho_amber_mode",
+    "itho_amber_dhw_mode",
+    "itho_amber_heating_mode",
+    "itho_amber_cooling_mode",
+    "itho_amber_dhw_in_progress",
+    "itho_amber_heating_in_progress",
+    "itho_amber_cooling_in_progress",
+    "itho_amber_defrost",
+    "itho_amber_compressor_speed",
+    "itho_amber_power",
+    "itho_amber_ambient_temperature",
+    "itho_amber_dhw_temperature",
+    "itho_amber_dhw_setpoint",
+    "itho_amber_cooling_setpoint",
+    "itho_amber_water_inlet_temperature",
+    "itho_amber_water_outlet_temperature",
+    "itho_amber_flow_rate",
+    "itho_amber_fan_speed",
+    "itho_amber_outdoor_coil_temperature",
+    "itho_amber_indoor_coil_temperature",
+    "itho_amber_discharge_temperature",
+    "itho_amber_suction_temperature",
+    "itho_amber_inside_temperature",
+    "itho_amber_avg_1h_ambient_temperature",
+    "itho_amber_avg_4h_ambient_temperature",
+    "itho_amber_avg_24h_ambient_temperature",
+    "itho_amber_high_pressure",
+    "itho_amber_low_pressure",
+    "itho_amber_expansion_valve",
+    "itho_amber_supply_voltage",
+    "itho_amber_estimated_power",
+    "itho_amber_delta_t",
+    "itho_amber_sg_ready",
+    "itho_amber_water_flow_switch",
+    "itho_amber_total_pulses",
+    "itho_amber_uptime",
+    "itho_amber_wifi_signal",
+    "alarm_generic",
+    "itho_amber_active_fault"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "System on/off",
+        "nl": "Systeem aan/uit"
+      },
+      "uiQuickAction": false
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Water outlet temperature",
+        "nl": "Water uitlaattemperatuur"
+      },
+      "units": "°C"
+    },
+    "target_temperature": {
+      "title": {
+        "en": "Heating setpoint",
+        "nl": "Verwarming setpoint"
+      },
+      "units": "°C",
+      "min": 20,
+      "max": 65,
+      "step": 0.5
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "Fault alarm",
+        "nl": "Storingsalarm"
+      }
+    },
+    "measure_temperature.heating_cooling": {
+      "title": {
+        "en": "Heating/cooling temperature",
+        "nl": "Verwarming/koeling temperatuur"
+      },
+      "units": "°C"
+    },
+    "measure_temperature.dallas_1": {
+      "title": {
+        "en": "Dallas sensor 1",
+        "nl": "Dallas sensor 1"
+      },
+      "units": "°C"
+    },
+    "measure_temperature.dallas_2": {
+      "title": {
+        "en": "Dallas sensor 2",
+        "nl": "Dallas sensor 2"
+      },
+      "units": "°C"
+    },
+    "measure_temperature.dallas_3": {
+      "title": {
+        "en": "Dallas sensor 3",
+        "nl": "Dallas sensor 3"
+      },
+      "units": "°C"
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "singular": true
+      },
+      "navigation": {
+        "next": "loading"
+      }
+    },
+    {
+      "id": "loading",
+      "template": "loading"
+    },
+    {
+      "id": "enter_encryption_key"
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  }
+}

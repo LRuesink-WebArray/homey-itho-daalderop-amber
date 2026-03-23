@@ -1,0 +1,18 @@
+{
+  "id": "is_heating",
+  "title": {
+    "en": "Heating !{{is|is not}} active",
+    "nl": "Verwarmen !{{is|is niet}} actief"
+  },
+  "hint": {
+    "en": "Check if the heat pump is currently heating.",
+    "nl": "Controleer of de warmtepomp momenteel aan het verwarmen is."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    }
+  ]
+}

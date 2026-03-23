@@ -1,0 +1,33 @@
+{
+  "id": "set_cooling_setpoint",
+  "title": {
+    "en": "Set cooling setpoint",
+    "nl": "Stel koeling setpoint in"
+  },
+  "titleFormatted": {
+    "en": "Set cooling setpoint to [[temperature]]°C",
+    "nl": "Stel koeling setpoint in op [[temperature]]°C"
+  },
+  "hint": {
+    "en": "Set the target water temperature for cooling.",
+    "nl": "Stel de doeltemperatuur van het water voor koeling in."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "number",
+      "name": "temperature",
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur"
+      },
+      "min": 7,
+      "max": 25,
+      "step": 0.5
+    }
+  ]
+}

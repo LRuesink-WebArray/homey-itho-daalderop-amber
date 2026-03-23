@@ -1,0 +1,33 @@
+{
+  "id": "compressor_speed",
+  "title": {
+    "en": "Compressor speed !{{is|is not}} above ...",
+    "nl": "Compressorsnelheid !{{is|is niet}} hoger dan ..."
+  },
+  "titleFormatted": {
+    "en": "Compressor speed !{{is|is not}} above [[speed]] Hz",
+    "nl": "Compressorsnelheid !{{is|is niet}} hoger dan [[speed]] Hz"
+  },
+  "hint": {
+    "en": "Check if the compressor speed is above a specific value.",
+    "nl": "Controleer of de compressorsnelheid hoger is dan een specifieke waarde."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "number",
+      "name": "speed",
+      "title": {
+        "en": "Speed",
+        "nl": "Snelheid"
+      },
+      "min": 0,
+      "max": 150,
+      "step": 1
+    }
+  ]
+}

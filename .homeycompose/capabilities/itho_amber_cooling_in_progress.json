@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Cooling active",
+    "nl": "Koelen actief"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/cooling.svg",
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Cooling started",
+    "nl": "Koelen gestart"
+  },
+  "insightsTitleFalse": {
+    "en": "Cooling stopped",
+    "nl": "Koelen gestopt"
+  }
+}

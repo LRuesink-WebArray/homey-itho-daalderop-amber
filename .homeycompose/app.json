@@ -1,0 +1,30 @@
+{
+  "id": "com.ithodaalderopamber",
+  "version": "1.0.3",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Itho Daalderop Amber",
+    "nl": "Itho Daalderop Amber"
+  },
+  "description": {
+    "en": "Climate for life"
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "WebArray"
+  },
+  "support": "mailto:lexruesink@live.nl",
+  "brandColor": "#1040a1"
+}

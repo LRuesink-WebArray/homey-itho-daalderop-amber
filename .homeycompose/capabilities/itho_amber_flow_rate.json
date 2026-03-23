@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Flow rate",
+    "nl": "Debiet"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "L/min",
+  "icon": "/assets/icons/flow.svg",
+  "insights": true
+}

@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "4h avg outdoor temperature",
+    "nl": "4u gem. buitentemperatuur"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "°C",
+  "icon": "/assets/icons/avg-temp.svg",
+  "insights": true
+}

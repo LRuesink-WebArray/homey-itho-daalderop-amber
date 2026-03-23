@@ -1,0 +1,59 @@
+{
+  "id": "set_heating_curve_point",
+  "title": {
+    "en": "Set heating curve point",
+    "nl": "Stel stooklijn punt in"
+  },
+  "titleFormatted": {
+    "en": "Set heating curve point [[point]]: ambient [[ambient]]°C, water [[water]]°C",
+    "nl": "Stel stooklijn punt [[point]] in: buiten [[ambient]]°C, water [[water]]°C"
+  },
+  "hint": {
+    "en": "Set a point on the heating curve (ambient temperature to water temperature mapping).",
+    "nl": "Stel een punt op de stooklijn in (buitentemperatuur naar watertemperatuur mapping)."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "dropdown",
+      "name": "point",
+      "title": {
+        "en": "Curve point",
+        "nl": "Stooklijn punt"
+      },
+      "values": [
+        { "id": "1", "label": { "en": "Point 1", "nl": "Punt 1" } },
+        { "id": "2", "label": { "en": "Point 2", "nl": "Punt 2" } },
+        { "id": "3", "label": { "en": "Point 3", "nl": "Punt 3" } },
+        { "id": "4", "label": { "en": "Point 4", "nl": "Punt 4" } },
+        { "id": "5", "label": { "en": "Point 5", "nl": "Punt 5" } }
+      ]
+    },
+    {
+      "type": "number",
+      "name": "ambient",
+      "title": {
+        "en": "Ambient temperature",
+        "nl": "Buitentemperatuur"
+      },
+      "min": -30,
+      "max": 25,
+      "step": 1
+    },
+    {
+      "type": "number",
+      "name": "water",
+      "title": {
+        "en": "Water temperature",
+        "nl": "Watertemperatuur"
+      },
+      "min": 20,
+      "max": 65,
+      "step": 1
+    }
+  ]
+}

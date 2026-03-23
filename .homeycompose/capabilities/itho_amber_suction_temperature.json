@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Suction temperature",
+    "nl": "Zuigtemperatuur"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "°C",
+  "icon": "/assets/icons/thermometer-down.svg",
+  "insights": true
+}

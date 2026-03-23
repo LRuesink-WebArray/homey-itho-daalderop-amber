@@ -1,0 +1,54 @@
+{
+  "id": "fault_triggered",
+  "title": {
+    "en": "A fault has occurred",
+    "nl": "Er is een storing opgetreden"
+  },
+  "titleFormatted": {
+    "en": "Fault [[fault_code]] has occurred",
+    "nl": "Storing [[fault_code]] is opgetreden"
+  },
+  "hint": {
+    "en": "Triggers when a specific fault code occurs on the heat pump.",
+    "nl": "Wordt geactiveerd wanneer een specifieke foutcode optreedt op de warmtepomp."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "autocomplete",
+      "name": "fault_code",
+      "title": {
+        "en": "Fault code",
+        "nl": "Foutcode"
+      },
+      "placeholder": {
+        "en": "Select a fault code...",
+        "nl": "Selecteer een foutcode..."
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "fault_code",
+      "type": "string",
+      "title": {
+        "en": "Fault code",
+        "nl": "Foutcode"
+      },
+      "example": "P01"
+    },
+    {
+      "name": "fault_description",
+      "type": "string",
+      "title": {
+        "en": "Description",
+        "nl": "Beschrijving"
+      },
+      "example": "Main line current protection"
+    }
+  ]
+}

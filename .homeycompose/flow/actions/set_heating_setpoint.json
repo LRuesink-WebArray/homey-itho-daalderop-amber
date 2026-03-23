@@ -1,0 +1,33 @@
+{
+  "id": "set_heating_setpoint",
+  "title": {
+    "en": "Set heating setpoint",
+    "nl": "Stel verwarming setpoint in"
+  },
+  "titleFormatted": {
+    "en": "Set heating setpoint to [[temperature]]°C",
+    "nl": "Stel verwarming setpoint in op [[temperature]]°C"
+  },
+  "hint": {
+    "en": "Set the target water temperature for heating.",
+    "nl": "Stel de doeltemperatuur van het water voor verwarming in."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "number",
+      "name": "temperature",
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur"
+      },
+      "min": 20,
+      "max": 65,
+      "step": 0.5
+    }
+  ]
+}

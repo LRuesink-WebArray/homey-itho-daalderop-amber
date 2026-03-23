@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Indoor coil temperature",
+    "nl": "Binnenunit spoel temperatuur"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "°C",
+  "icon": "/assets/icons/coil.svg",
+  "insights": true
+}

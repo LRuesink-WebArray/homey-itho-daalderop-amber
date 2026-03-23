@@ -1,0 +1,30 @@
+{
+  "id": "set_heating_mode",
+  "title": {
+    "en": "Set heating mode",
+    "nl": "Stel verwarming modus in"
+  },
+  "titleFormatted": {
+    "en": "Set heating mode to [[mode]]",
+    "nl": "Stel verwarming modus in op [[mode]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "dropdown",
+      "name": "mode",
+      "title": {
+        "en": "Mode",
+        "nl": "Modus"
+      },
+      "values": [
+        { "id": "on", "label": { "en": "On", "nl": "Aan" } },
+        { "id": "off", "label": { "en": "Off", "nl": "Uit" } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Cooling mode",
+    "nl": "Koelmodus"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle",
+  "icon": "/assets/icons/cooling.svg",
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Cooling mode enabled",
+    "nl": "Koelmodus ingeschakeld"
+  },
+  "insightsTitleFalse": {
+    "en": "Cooling mode disabled",
+    "nl": "Koelmodus uitgeschakeld"
+  }
+}

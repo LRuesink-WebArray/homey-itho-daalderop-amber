@@ -1,0 +1,18 @@
+{
+  "id": "defrost_ended",
+  "title": {
+    "en": "Defrost has ended",
+    "nl": "Ontdooien is gestopt"
+  },
+  "hint": {
+    "en": "Triggers when the heat pump stops defrosting.",
+    "nl": "Wordt geactiveerd wanneer de warmtepomp stopt met ontdooien."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    }
+  ]
+}

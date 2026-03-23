@@ -1,0 +1,33 @@
+{
+  "id": "dhw_temperature",
+  "title": {
+    "en": "Hot water temperature !{{is|is not}} above ...",
+    "nl": "Warm water temperatuur !{{is|is niet}} hoger dan ..."
+  },
+  "titleFormatted": {
+    "en": "Hot water temperature !{{is|is not}} above [[temperature]] °C",
+    "nl": "Warm water temperatuur !{{is|is niet}} hoger dan [[temperature]] °C"
+  },
+  "hint": {
+    "en": "Check if the domestic hot water temperature is above a specific value.",
+    "nl": "Controleer of de warm water temperatuur hoger is dan een specifieke waarde."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "number",
+      "name": "temperature",
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur"
+      },
+      "min": 0,
+      "max": 80,
+      "step": 0.5
+    }
+  ]
+}

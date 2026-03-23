@@ -1,0 +1,2509 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.ithodaalderopamber",
+  "version": "1.0.3",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Itho Daalderop Amber",
+    "nl": "Itho Daalderop Amber"
+  },
+  "description": {
+    "en": "Climate for life"
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "WebArray"
+  },
+  "support": "mailto:lexruesink@live.nl",
+  "brandColor": "#1040a1",
+  "flow": {
+    "triggers": [
+      {
+        "id": "defrost_ended",
+        "title": {
+          "en": "Defrost has ended",
+          "nl": "Ontdooien is gestopt"
+        },
+        "hint": {
+          "en": "Triggers when the heat pump stops defrosting.",
+          "nl": "Wordt geactiveerd wanneer de warmtepomp stopt met ontdooien."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          }
+        ]
+      },
+      {
+        "id": "defrost_started",
+        "title": {
+          "en": "Defrost has started",
+          "nl": "Ontdooien is gestart"
+        },
+        "hint": {
+          "en": "Triggers when the heat pump starts defrosting.",
+          "nl": "Wordt geactiveerd wanneer de warmtepomp begint met ontdooien."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          }
+        ]
+      },
+      {
+        "id": "fault_cleared",
+        "title": {
+          "en": "A fault has been cleared",
+          "nl": "Een storing is opgelost"
+        },
+        "titleFormatted": {
+          "en": "Fault [[fault_code]] has been cleared",
+          "nl": "Storing [[fault_code]] is opgelost"
+        },
+        "hint": {
+          "en": "Triggers when a specific fault code is cleared on the heat pump.",
+          "nl": "Wordt geactiveerd wanneer een specifieke foutcode wordt opgeheven op de warmtepomp."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "autocomplete",
+            "name": "fault_code",
+            "title": {
+              "en": "Fault code",
+              "nl": "Foutcode"
+            },
+            "placeholder": {
+              "en": "Select a fault code...",
+              "nl": "Selecteer een foutcode..."
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "fault_code",
+            "type": "string",
+            "title": {
+              "en": "Fault code",
+              "nl": "Foutcode"
+            },
+            "example": "P01"
+          },
+          {
+            "name": "fault_description",
+            "type": "string",
+            "title": {
+              "en": "Description",
+              "nl": "Beschrijving"
+            },
+            "example": "Main line current protection"
+          }
+        ]
+      },
+      {
+        "id": "fault_triggered",
+        "title": {
+          "en": "A fault has occurred",
+          "nl": "Er is een storing opgetreden"
+        },
+        "titleFormatted": {
+          "en": "Fault [[fault_code]] has occurred",
+          "nl": "Storing [[fault_code]] is opgetreden"
+        },
+        "hint": {
+          "en": "Triggers when a specific fault code occurs on the heat pump.",
+          "nl": "Wordt geactiveerd wanneer een specifieke foutcode optreedt op de warmtepomp."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "autocomplete",
+            "name": "fault_code",
+            "title": {
+              "en": "Fault code",
+              "nl": "Foutcode"
+            },
+            "placeholder": {
+              "en": "Select a fault code...",
+              "nl": "Selecteer een foutcode..."
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "fault_code",
+            "type": "string",
+            "title": {
+              "en": "Fault code",
+              "nl": "Foutcode"
+            },
+            "example": "P01"
+          },
+          {
+            "name": "fault_description",
+            "type": "string",
+            "title": {
+              "en": "Description",
+              "nl": "Beschrijving"
+            },
+            "example": "Main line current protection"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "compressor_speed",
+        "title": {
+          "en": "Compressor speed !{{is|is not}} above ...",
+          "nl": "Compressorsnelheid !{{is|is niet}} hoger dan ..."
+        },
+        "titleFormatted": {
+          "en": "Compressor speed !{{is|is not}} above [[speed]] Hz",
+          "nl": "Compressorsnelheid !{{is|is niet}} hoger dan [[speed]] Hz"
+        },
+        "hint": {
+          "en": "Check if the compressor speed is above a specific value.",
+          "nl": "Controleer of de compressorsnelheid hoger is dan een specifieke waarde."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "number",
+            "name": "speed",
+            "title": {
+              "en": "Speed",
+              "nl": "Snelheid"
+            },
+            "min": 0,
+            "max": 150,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "dallas_temperature",
+        "title": {
+          "en": "Dallas temperature !{{is|is not}} above ...",
+          "nl": "Dallas temperatuur !{{is|is niet}} hoger dan ..."
+        },
+        "titleFormatted": {
+          "en": "[[sensor]] temperature !{{is|is not}} above [[temperature]] °C",
+          "nl": "[[sensor]] temperatuur !{{is|is niet}} hoger dan [[temperature]] °C"
+        },
+        "hint": {
+          "en": "Check if a Dallas temperature sensor is above a specific value.",
+          "nl": "Controleer of een Dallas temperatuursensor hoger is dan een specifieke waarde."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "dropdown",
+            "name": "sensor",
+            "title": {
+              "en": "Sensor",
+              "nl": "Sensor"
+            },
+            "values": [
+              {
+                "id": "dallas_1",
+                "label": {
+                  "en": "Dallas 1",
+                  "nl": "Dallas 1"
+                }
+              },
+              {
+                "id": "dallas_2",
+                "label": {
+                  "en": "Dallas 2",
+                  "nl": "Dallas 2"
+                }
+              },
+              {
+                "id": "dallas_3",
+                "label": {
+                  "en": "Dallas 3",
+                  "nl": "Dallas 3"
+                }
+              }
+            ]
+          },
+          {
+            "type": "number",
+            "name": "temperature",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "min": -40,
+            "max": 100,
+            "step": 0.5
+          }
+        ]
+      },
+      {
+        "id": "dhw_temperature",
+        "title": {
+          "en": "Hot water temperature !{{is|is not}} above ...",
+          "nl": "Warm water temperatuur !{{is|is niet}} hoger dan ..."
+        },
+        "titleFormatted": {
+          "en": "Hot water temperature !{{is|is not}} above [[temperature]] °C",
+          "nl": "Warm water temperatuur !{{is|is niet}} hoger dan [[temperature]] °C"
+        },
+        "hint": {
+          "en": "Check if the domestic hot water temperature is above a specific value.",
+          "nl": "Controleer of de warm water temperatuur hoger is dan een specifieke waarde."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "number",
+            "name": "temperature",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "min": 0,
+            "max": 80,
+            "step": 0.5
+          }
+        ]
+      },
+      {
+        "id": "has_water_flow",
+        "title": {
+          "en": "Water flow !{{is|is not}} detected",
+          "nl": "Waterstroom !{{is|is niet}} gedetecteerd"
+        },
+        "hint": {
+          "en": "Check if there is water flow in the system.",
+          "nl": "Controleer of er waterstroom is in het systeem."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          }
+        ]
+      },
+      {
+        "id": "is_cooling",
+        "title": {
+          "en": "Cooling !{{is|is not}} active",
+          "nl": "Koelen !{{is|is niet}} actief"
+        },
+        "hint": {
+          "en": "Check if the heat pump is currently cooling.",
+          "nl": "Controleer of de warmtepomp momenteel aan het koelen is."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          }
+        ]
+      },
+      {
+        "id": "is_defrost",
+        "title": {
+          "en": "Defrost !{{is|is not}} active",
+          "nl": "Ontdooien !{{is|is niet}} actief"
+        },
+        "hint": {
+          "en": "Check if the heat pump is currently defrosting.",
+          "nl": "Controleer of de warmtepomp momenteel aan het ontdooien is."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          }
+        ]
+      },
+      {
+        "id": "is_dhw",
+        "title": {
+          "en": "Hot water heating !{{is|is not}} active",
+          "nl": "Warm water verwarmen !{{is|is niet}} actief"
+        },
+        "hint": {
+          "en": "Check if the heat pump is currently heating domestic hot water.",
+          "nl": "Controleer of de warmtepomp momenteel warm water aan het verwarmen is."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          }
+        ]
+      },
+      {
+        "id": "is_heating",
+        "title": {
+          "en": "Heating !{{is|is not}} active",
+          "nl": "Verwarmen !{{is|is niet}} actief"
+        },
+        "hint": {
+          "en": "Check if the heat pump is currently heating.",
+          "nl": "Controleer of de warmtepomp momenteel aan het verwarmen is."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          }
+        ]
+      },
+      {
+        "id": "is_sg_ready",
+        "title": {
+          "en": "SG Ready !{{is|is not}} active",
+          "nl": "SG Ready !{{is|is niet}} actief"
+        },
+        "hint": {
+          "en": "Check if SG Ready signal is active.",
+          "nl": "Controleer of het SG Ready signaal actief is."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          }
+        ]
+      },
+      {
+        "id": "mode_is",
+        "title": {
+          "en": "Working mode !{{is|is not}} ...",
+          "nl": "Bedrijfsmodus !{{is|is niet}} ..."
+        },
+        "titleFormatted": {
+          "en": "Working mode !{{is|is not}} [[mode]]",
+          "nl": "Bedrijfsmodus !{{is|is niet}} [[mode]]"
+        },
+        "hint": {
+          "en": "Check if the heat pump is in a specific working mode.",
+          "nl": "Controleer of de warmtepomp in een specifieke bedrijfsmodus staat."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode",
+              "nl": "Modus"
+            },
+            "values": [
+              {
+                "id": "standby",
+                "label": {
+                  "en": "Standby",
+                  "nl": "Stand-by"
+                }
+              },
+              {
+                "id": "heating",
+                "label": {
+                  "en": "Heating",
+                  "nl": "Verwarmen"
+                }
+              },
+              {
+                "id": "cooling",
+                "label": {
+                  "en": "Cooling",
+                  "nl": "Koelen"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Automatisch"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "outdoor_temperature",
+        "title": {
+          "en": "Outdoor temperature !{{is|is not}} above ...",
+          "nl": "Buitentemperatuur !{{is|is niet}} hoger dan ..."
+        },
+        "titleFormatted": {
+          "en": "Outdoor temperature !{{is|is not}} above [[temperature]] °C",
+          "nl": "Buitentemperatuur !{{is|is niet}} hoger dan [[temperature]] °C"
+        },
+        "hint": {
+          "en": "Check if the outdoor temperature is above a specific value.",
+          "nl": "Controleer of de buitentemperatuur hoger is dan een specifieke waarde."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "number",
+            "name": "temperature",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "min": -40,
+            "max": 50,
+            "step": 0.5
+          }
+        ]
+      },
+      {
+        "id": "power_consumption",
+        "title": {
+          "en": "Power consumption !{{is|is not}} above ...",
+          "nl": "Stroomverbruik !{{is|is niet}} hoger dan ..."
+        },
+        "titleFormatted": {
+          "en": "Power consumption !{{is|is not}} above [[power]] A",
+          "nl": "Stroomverbruik !{{is|is niet}} hoger dan [[power]] A"
+        },
+        "hint": {
+          "en": "Check if the running current is above a specific value.",
+          "nl": "Controleer of de stroomsterkte hoger is dan een specifieke waarde."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "number",
+            "name": "power",
+            "title": {
+              "en": "Current",
+              "nl": "Stroomsterkte"
+            },
+            "min": 0,
+            "max": 20,
+            "step": 0.1
+          }
+        ]
+      },
+      {
+        "id": "relay_is_on",
+        "title": {
+          "en": "Relay !{{is|is not}} on",
+          "nl": "Relais !{{is|is niet}} aan"
+        },
+        "titleFormatted": {
+          "en": "[[relay]] !{{is|is not}} on",
+          "nl": "[[relay]] !{{is|is niet}} aan"
+        },
+        "hint": {
+          "en": "Check if a relay is currently on.",
+          "nl": "Controleer of een relais momenteel aan is."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "dropdown",
+            "name": "relay",
+            "title": {
+              "en": "Relay",
+              "nl": "Relais"
+            },
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Relay 1",
+                  "nl": "Relais 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Relay 2",
+                  "nl": "Relais 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Relay 3",
+                  "nl": "Relais 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Relay 4",
+                  "nl": "Relais 4"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "water_temperature",
+        "title": {
+          "en": "Water outlet temperature !{{is|is not}} above ...",
+          "nl": "Wateruitlaattemperatuur !{{is|is niet}} hoger dan ..."
+        },
+        "titleFormatted": {
+          "en": "Water outlet temperature !{{is|is not}} above [[temperature]] °C",
+          "nl": "Wateruitlaattemperatuur !{{is|is niet}} hoger dan [[temperature]] °C"
+        },
+        "hint": {
+          "en": "Check if the water outlet temperature is above a specific value.",
+          "nl": "Controleer of de wateruitlaattemperatuur hoger is dan een specifieke waarde."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "number",
+            "name": "temperature",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "min": 0,
+            "max": 80,
+            "step": 0.5
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "restart_controller",
+        "title": {
+          "en": "Restart control module",
+          "nl": "Herstart regelmodule"
+        },
+        "hint": {
+          "en": "Restart the ESP control module (not the heat pump itself).",
+          "nl": "Herstart de ESP regelmodule (niet de warmtepomp zelf)."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          }
+        ]
+      },
+      {
+        "id": "set_cooling_mode",
+        "title": {
+          "en": "Set cooling mode",
+          "nl": "Stel koeling modus in"
+        },
+        "titleFormatted": {
+          "en": "Set cooling mode to [[mode]]",
+          "nl": "Stel koeling modus in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode",
+              "nl": "Modus"
+            },
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "nl": "Aan"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_cooling_setpoint",
+        "title": {
+          "en": "Set cooling setpoint",
+          "nl": "Stel koeling setpoint in"
+        },
+        "titleFormatted": {
+          "en": "Set cooling setpoint to [[temperature]]°C",
+          "nl": "Stel koeling setpoint in op [[temperature]]°C"
+        },
+        "hint": {
+          "en": "Set the target water temperature for cooling.",
+          "nl": "Stel de doeltemperatuur van het water voor koeling in."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "number",
+            "name": "temperature",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "min": 7,
+            "max": 25,
+            "step": 0.5
+          }
+        ]
+      },
+      {
+        "id": "set_dhw_mode",
+        "title": {
+          "en": "Set hot water mode",
+          "nl": "Stel warm water modus in"
+        },
+        "titleFormatted": {
+          "en": "Set hot water mode to [[mode]]",
+          "nl": "Stel warm water modus in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode",
+              "nl": "Modus"
+            },
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "nl": "Aan"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_dhw_setpoint",
+        "title": {
+          "en": "Set hot water setpoint",
+          "nl": "Stel warm water setpoint in"
+        },
+        "titleFormatted": {
+          "en": "Set hot water setpoint to [[temperature]]°C",
+          "nl": "Stel warm water setpoint in op [[temperature]]°C"
+        },
+        "hint": {
+          "en": "Set the target temperature for domestic hot water.",
+          "nl": "Stel de doeltemperatuur voor warm tapwater in."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "number",
+            "name": "temperature",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "min": 30,
+            "max": 65,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "set_heating_curve_point",
+        "title": {
+          "en": "Set heating curve point",
+          "nl": "Stel stooklijn punt in"
+        },
+        "titleFormatted": {
+          "en": "Set heating curve point [[point]]: ambient [[ambient]]°C, water [[water]]°C",
+          "nl": "Stel stooklijn punt [[point]] in: buiten [[ambient]]°C, water [[water]]°C"
+        },
+        "hint": {
+          "en": "Set a point on the heating curve (ambient temperature to water temperature mapping).",
+          "nl": "Stel een punt op de stooklijn in (buitentemperatuur naar watertemperatuur mapping)."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "dropdown",
+            "name": "point",
+            "title": {
+              "en": "Curve point",
+              "nl": "Stooklijn punt"
+            },
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Point 1",
+                  "nl": "Punt 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Point 2",
+                  "nl": "Punt 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Point 3",
+                  "nl": "Punt 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Point 4",
+                  "nl": "Punt 4"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Point 5",
+                  "nl": "Punt 5"
+                }
+              }
+            ]
+          },
+          {
+            "type": "number",
+            "name": "ambient",
+            "title": {
+              "en": "Ambient temperature",
+              "nl": "Buitentemperatuur"
+            },
+            "min": -30,
+            "max": 25,
+            "step": 1
+          },
+          {
+            "type": "number",
+            "name": "water",
+            "title": {
+              "en": "Water temperature",
+              "nl": "Watertemperatuur"
+            },
+            "min": 20,
+            "max": 65,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "set_heating_mode",
+        "title": {
+          "en": "Set heating mode",
+          "nl": "Stel verwarming modus in"
+        },
+        "titleFormatted": {
+          "en": "Set heating mode to [[mode]]",
+          "nl": "Stel verwarming modus in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode",
+              "nl": "Modus"
+            },
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "nl": "Aan"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_heating_setpoint",
+        "title": {
+          "en": "Set heating setpoint",
+          "nl": "Stel verwarming setpoint in"
+        },
+        "titleFormatted": {
+          "en": "Set heating setpoint to [[temperature]]°C",
+          "nl": "Stel verwarming setpoint in op [[temperature]]°C"
+        },
+        "hint": {
+          "en": "Set the target water temperature for heating.",
+          "nl": "Stel de doeltemperatuur van het water voor verwarming in."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "number",
+            "name": "temperature",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "min": 20,
+            "max": 65,
+            "step": 0.5
+          }
+        ]
+      },
+      {
+        "id": "set_pump_speed_cooling",
+        "title": {
+          "en": "Set pump speed cooling",
+          "nl": "Stel pompsnelheid koeling in"
+        },
+        "titleFormatted": {
+          "en": "Set pump speed cooling to [[speed]]",
+          "nl": "Stel pompsnelheid koeling in op [[speed]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "dropdown",
+            "name": "speed",
+            "title": {
+              "en": "Speed",
+              "nl": "Snelheid"
+            },
+            "values": [
+              {
+                "id": "High",
+                "label": {
+                  "en": "High",
+                  "nl": "Hoog"
+                }
+              },
+              {
+                "id": "Medium",
+                "label": {
+                  "en": "Medium",
+                  "nl": "Midden"
+                }
+              },
+              {
+                "id": "Low",
+                "label": {
+                  "en": "Low",
+                  "nl": "Laag"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_pump_speed_dhw",
+        "title": {
+          "en": "Set pump speed hot water",
+          "nl": "Stel pompsnelheid warm water in"
+        },
+        "titleFormatted": {
+          "en": "Set pump speed hot water to [[speed]]",
+          "nl": "Stel pompsnelheid warm water in op [[speed]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "dropdown",
+            "name": "speed",
+            "title": {
+              "en": "Speed",
+              "nl": "Snelheid"
+            },
+            "values": [
+              {
+                "id": "High",
+                "label": {
+                  "en": "High",
+                  "nl": "Hoog"
+                }
+              },
+              {
+                "id": "Medium",
+                "label": {
+                  "en": "Medium",
+                  "nl": "Midden"
+                }
+              },
+              {
+                "id": "Low",
+                "label": {
+                  "en": "Low",
+                  "nl": "Laag"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_pump_speed_heating",
+        "title": {
+          "en": "Set pump speed heating",
+          "nl": "Stel pompsnelheid verwarming in"
+        },
+        "titleFormatted": {
+          "en": "Set pump speed heating to [[speed]]",
+          "nl": "Stel pompsnelheid verwarming in op [[speed]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "dropdown",
+            "name": "speed",
+            "title": {
+              "en": "Speed",
+              "nl": "Snelheid"
+            },
+            "values": [
+              {
+                "id": "High",
+                "label": {
+                  "en": "High",
+                  "nl": "Hoog"
+                }
+              },
+              {
+                "id": "Medium",
+                "label": {
+                  "en": "Medium",
+                  "nl": "Midden"
+                }
+              },
+              {
+                "id": "Low",
+                "label": {
+                  "en": "Low",
+                  "nl": "Laag"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_working_mode",
+        "title": {
+          "en": "Set working mode",
+          "nl": "Stel bedrijfsmodus in"
+        },
+        "titleFormatted": {
+          "en": "Set working mode to [[mode]]",
+          "nl": "Stel bedrijfsmodus in op [[mode]]"
+        },
+        "hint": {
+          "en": "Set the heat pump working mode.",
+          "nl": "Stel de bedrijfsmodus van de warmtepomp in."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=heatpump"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode",
+              "nl": "Modus"
+            },
+            "values": [
+              {
+                "id": "Standby",
+                "label": {
+                  "en": "Standby",
+                  "nl": "Stand-by"
+                }
+              },
+              {
+                "id": "Heating",
+                "label": {
+                  "en": "Heating",
+                  "nl": "Verwarmen"
+                }
+              },
+              {
+                "id": "Cooling",
+                "label": {
+                  "en": "Cooling",
+                  "nl": "Koelen"
+                }
+              },
+              {
+                "id": "Auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Automatisch"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Itho Daalderop Amber Heat Pump",
+        "nl": "Itho Daalderop Amber Warmtepomp"
+      },
+      "class": "sensor",
+      "discovery": "ithodaalderop-amber",
+      "capabilities": [
+        "measure_temperature.heating_cooling",
+        "onoff",
+        "measure_temperature",
+        "target_temperature",
+        "itho_amber_mode",
+        "itho_amber_dhw_mode",
+        "itho_amber_heating_mode",
+        "itho_amber_cooling_mode",
+        "itho_amber_dhw_in_progress",
+        "itho_amber_heating_in_progress",
+        "itho_amber_cooling_in_progress",
+        "itho_amber_defrost",
+        "itho_amber_compressor_speed",
+        "itho_amber_power",
+        "itho_amber_ambient_temperature",
+        "itho_amber_dhw_temperature",
+        "itho_amber_dhw_setpoint",
+        "itho_amber_cooling_setpoint",
+        "itho_amber_water_inlet_temperature",
+        "itho_amber_water_outlet_temperature",
+        "itho_amber_flow_rate",
+        "itho_amber_fan_speed",
+        "itho_amber_outdoor_coil_temperature",
+        "itho_amber_indoor_coil_temperature",
+        "itho_amber_discharge_temperature",
+        "itho_amber_suction_temperature",
+        "itho_amber_inside_temperature",
+        "itho_amber_avg_1h_ambient_temperature",
+        "itho_amber_avg_4h_ambient_temperature",
+        "itho_amber_avg_24h_ambient_temperature",
+        "itho_amber_high_pressure",
+        "itho_amber_low_pressure",
+        "itho_amber_expansion_valve",
+        "itho_amber_supply_voltage",
+        "itho_amber_estimated_power",
+        "itho_amber_delta_t",
+        "itho_amber_sg_ready",
+        "itho_amber_water_flow_switch",
+        "itho_amber_total_pulses",
+        "itho_amber_uptime",
+        "itho_amber_wifi_signal",
+        "alarm_generic",
+        "itho_amber_active_fault"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "System on/off",
+            "nl": "Systeem aan/uit"
+          },
+          "uiQuickAction": false
+        },
+        "measure_temperature": {
+          "title": {
+            "en": "Water outlet temperature",
+            "nl": "Water uitlaattemperatuur"
+          },
+          "units": "°C"
+        },
+        "target_temperature": {
+          "title": {
+            "en": "Heating setpoint",
+            "nl": "Verwarming setpoint"
+          },
+          "units": "°C",
+          "min": 20,
+          "max": 65,
+          "step": 0.5
+        },
+        "alarm_generic": {
+          "title": {
+            "en": "Fault alarm",
+            "nl": "Storingsalarm"
+          }
+        },
+        "measure_temperature.heating_cooling": {
+          "title": {
+            "en": "Heating/cooling temperature",
+            "nl": "Verwarming/koeling temperatuur"
+          },
+          "units": "°C"
+        },
+        "measure_temperature.dallas_1": {
+          "title": {
+            "en": "Dallas sensor 1",
+            "nl": "Dallas sensor 1"
+          },
+          "units": "°C"
+        },
+        "measure_temperature.dallas_2": {
+          "title": {
+            "en": "Dallas sensor 2",
+            "nl": "Dallas sensor 2"
+          },
+          "units": "°C"
+        },
+        "measure_temperature.dallas_3": {
+          "title": {
+            "en": "Dallas sensor 3",
+            "nl": "Dallas sensor 3"
+          },
+          "units": "°C"
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "options": {
+            "singular": true
+          },
+          "navigation": {
+            "next": "loading"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "enter_encryption_key"
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "images": {
+        "small": "/drivers/heatpump/assets/images/small.png",
+        "large": "/drivers/heatpump/assets/images/large.png",
+        "xlarge": "/drivers/heatpump/assets/images/xlarge.png"
+      },
+      "id": "heatpump",
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Domestic Hot Water",
+            "nl": "Warm tapwater"
+          },
+          "children": [
+            {
+              "id": "domestic_hot_water_setpoint",
+              "type": "number",
+              "label": {
+                "en": "Hot water setpoint",
+                "nl": "Warm water setpoint"
+              },
+              "hint": {
+                "en": "Target temperature for domestic hot water (°C)",
+                "nl": "Doeltemperatuur voor warm tapwater (°C)"
+              },
+              "value": 50,
+              "min": 0,
+              "max": 100,
+              "units": "°C"
+            },
+            {
+              "id": "domestic_hot_water_reheating_point",
+              "type": "number",
+              "label": {
+                "en": "Hot water reheating point",
+                "nl": "Warm water herverwarmingspunt"
+              },
+              "hint": {
+                "en": "Temperature at which reheating starts (°C)",
+                "nl": "Temperatuur waarbij herverwarming start (°C)"
+              },
+              "value": 45,
+              "min": 0,
+              "max": 100,
+              "units": "°C"
+            },
+            {
+              "id": "use_domestic_hot_water_timer",
+              "type": "checkbox",
+              "label": {
+                "en": "Use hot water timer",
+                "nl": "Gebruik warm water timer"
+              },
+              "value": false
+            },
+            {
+              "id": "domestic_hot_water_eco_mode",
+              "type": "checkbox",
+              "label": {
+                "en": "ECO mode",
+                "nl": "ECO modus"
+              },
+              "value": false
+            },
+            {
+              "id": "minimum_ambient_temperature_to_start_domestic_hot_water_eco_mode",
+              "type": "number",
+              "label": {
+                "en": "Minimum ambient temperature for ECO mode",
+                "nl": "Minimum buitentemperatuur voor ECO modus"
+              },
+              "hint": {
+                "en": "ECO mode only activates above this outdoor temperature (°C)",
+                "nl": "ECO modus wordt alleen geactiveerd boven deze buitentemperatuur (°C)"
+              },
+              "value": 10,
+              "min": -30,
+              "max": 40,
+              "units": "°C"
+            },
+            {
+              "id": "use_anti_legionella_mode",
+              "type": "checkbox",
+              "label": {
+                "en": "Anti-legionella mode",
+                "nl": "Anti-legionella modus"
+              },
+              "value": true
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Heating",
+            "nl": "Verwarming"
+          },
+          "children": [
+            {
+              "id": "heating_setpoint",
+              "type": "number",
+              "label": {
+                "en": "Heating setpoint",
+                "nl": "Verwarming setpoint"
+              },
+              "hint": {
+                "en": "Target water temperature for heating (°C)",
+                "nl": "Doeltemperatuur water voor verwarming (°C)"
+              },
+              "value": 35,
+              "min": 0,
+              "max": 100,
+              "units": "°C"
+            },
+            {
+              "id": "use_heating_curve",
+              "type": "checkbox",
+              "label": {
+                "en": "Use heating curve",
+                "nl": "Gebruik stooklijn"
+              },
+              "value": false
+            },
+            {
+              "id": "circuit_1_maximum_temperature",
+              "type": "number",
+              "label": {
+                "en": "Circuit 1 maximum temperature",
+                "nl": "Circuit 1 maximale temperatuur"
+              },
+              "value": 55,
+              "min": 0,
+              "max": 100,
+              "units": "°C"
+            },
+            {
+              "id": "circuit_1_minimum_temperature",
+              "type": "number",
+              "label": {
+                "en": "Circuit 1 minimum temperature",
+                "nl": "Circuit 1 minimale temperatuur"
+              },
+              "value": 20,
+              "min": 0,
+              "max": 100,
+              "units": "°C"
+            },
+            {
+              "id": "reduced_mode_timer",
+              "type": "checkbox",
+              "label": {
+                "en": "Reduced mode timer",
+                "nl": "Gereduceerde modus timer"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Cooling",
+            "nl": "Koeling"
+          },
+          "children": [
+            {
+              "id": "cooling_setpoint",
+              "type": "number",
+              "label": {
+                "en": "Cooling setpoint",
+                "nl": "Koeling setpoint"
+              },
+              "hint": {
+                "en": "Target water temperature for cooling (°C)",
+                "nl": "Doeltemperatuur water voor koeling (°C)"
+              },
+              "value": 18,
+              "min": 0,
+              "max": 30,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Heating Curve",
+            "nl": "Stooklijn"
+          },
+          "children": [
+            {
+              "id": "heating_curve_ambient_temperature_1",
+              "type": "number",
+              "label": {
+                "en": "Ambient temperature point 1",
+                "nl": "Buitentemperatuur punt 1"
+              },
+              "value": -15,
+              "min": -40,
+              "max": 40,
+              "units": "°C"
+            },
+            {
+              "id": "heating_curve_water_temperature_1",
+              "type": "number",
+              "label": {
+                "en": "Water temperature point 1",
+                "nl": "Watertemperatuur punt 1"
+              },
+              "value": 45,
+              "min": 0,
+              "max": 100,
+              "units": "°C"
+            },
+            {
+              "id": "heating_curve_ambient_temperature_2",
+              "type": "number",
+              "label": {
+                "en": "Ambient temperature point 2",
+                "nl": "Buitentemperatuur punt 2"
+              },
+              "value": -5,
+              "min": -40,
+              "max": 40,
+              "units": "°C"
+            },
+            {
+              "id": "heating_curve_water_temperature_2",
+              "type": "number",
+              "label": {
+                "en": "Water temperature point 2",
+                "nl": "Watertemperatuur punt 2"
+              },
+              "value": 40,
+              "min": 0,
+              "max": 100,
+              "units": "°C"
+            },
+            {
+              "id": "heating_curve_ambient_temperature_3",
+              "type": "number",
+              "label": {
+                "en": "Ambient temperature point 3",
+                "nl": "Buitentemperatuur punt 3"
+              },
+              "value": 5,
+              "min": -40,
+              "max": 40,
+              "units": "°C"
+            },
+            {
+              "id": "heating_curve_water_temperature_3",
+              "type": "number",
+              "label": {
+                "en": "Water temperature point 3",
+                "nl": "Watertemperatuur punt 3"
+              },
+              "value": 35,
+              "min": 0,
+              "max": 100,
+              "units": "°C"
+            },
+            {
+              "id": "heating_curve_ambient_temperature_4",
+              "type": "number",
+              "label": {
+                "en": "Ambient temperature point 4",
+                "nl": "Buitentemperatuur punt 4"
+              },
+              "value": 10,
+              "min": -40,
+              "max": 40,
+              "units": "°C"
+            },
+            {
+              "id": "heating_curve_water_temperature_4",
+              "type": "number",
+              "label": {
+                "en": "Water temperature point 4",
+                "nl": "Watertemperatuur punt 4"
+              },
+              "value": 30,
+              "min": 0,
+              "max": 100,
+              "units": "°C"
+            },
+            {
+              "id": "heating_curve_ambient_temperature_5",
+              "type": "number",
+              "label": {
+                "en": "Ambient temperature point 5",
+                "nl": "Buitentemperatuur punt 5"
+              },
+              "value": 20,
+              "min": -40,
+              "max": 40,
+              "units": "°C"
+            },
+            {
+              "id": "heating_curve_water_temperature_5",
+              "type": "number",
+              "label": {
+                "en": "Water temperature point 5",
+                "nl": "Watertemperatuur punt 5"
+              },
+              "value": 25,
+              "min": 0,
+              "max": 100,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Delta T Control",
+            "nl": "Delta T Regeling"
+          },
+          "children": [
+            {
+              "id": "delta_t_to_stop_hp",
+              "type": "number",
+              "label": {
+                "en": "Delta T to stop heat pump",
+                "nl": "Delta T om warmtepomp te stoppen"
+              },
+              "hint": {
+                "en": "Temperature difference at which heat pump stops (K)",
+                "nl": "Temperatuurverschil waarbij warmtepomp stopt (K)"
+              },
+              "value": 2,
+              "min": 0,
+              "max": 20,
+              "units": "K"
+            },
+            {
+              "id": "delta_t_to_restart_hp",
+              "type": "number",
+              "label": {
+                "en": "Delta T to restart heat pump",
+                "nl": "Delta T om warmtepomp te herstarten"
+              },
+              "hint": {
+                "en": "Temperature difference at which heat pump restarts (K)",
+                "nl": "Temperatuurverschil waarbij warmtepomp herstart (K)"
+              },
+              "value": 3,
+              "min": 0,
+              "max": 20,
+              "units": "K"
+            },
+            {
+              "id": "delta_t_to_lower_compressor_speed",
+              "type": "number",
+              "label": {
+                "en": "Delta T to lower compressor speed",
+                "nl": "Delta T om compressorsnelheid te verlagen"
+              },
+              "hint": {
+                "en": "Temperature difference at which compressor speed is reduced (K)",
+                "nl": "Temperatuurverschil waarbij compressorsnelheid wordt verlaagd (K)"
+              },
+              "value": 1,
+              "min": 0,
+              "max": 20,
+              "units": "K"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Pump Speeds",
+            "nl": "Pompsnelheden"
+          },
+          "children": [
+            {
+              "id": "pump_speed_heating",
+              "type": "dropdown",
+              "label": {
+                "en": "Pump speed heating",
+                "nl": "Pompsnelheid verwarming"
+              },
+              "value": "Medium",
+              "values": [
+                {
+                  "id": "High",
+                  "label": {
+                    "en": "High",
+                    "nl": "Hoog"
+                  }
+                },
+                {
+                  "id": "Medium",
+                  "label": {
+                    "en": "Medium",
+                    "nl": "Midden"
+                  }
+                },
+                {
+                  "id": "Low",
+                  "label": {
+                    "en": "Low",
+                    "nl": "Laag"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "pump_speed_cooling",
+              "type": "dropdown",
+              "label": {
+                "en": "Pump speed cooling",
+                "nl": "Pompsnelheid koeling"
+              },
+              "value": "Medium",
+              "values": [
+                {
+                  "id": "High",
+                  "label": {
+                    "en": "High",
+                    "nl": "Hoog"
+                  }
+                },
+                {
+                  "id": "Medium",
+                  "label": {
+                    "en": "Medium",
+                    "nl": "Midden"
+                  }
+                },
+                {
+                  "id": "Low",
+                  "label": {
+                    "en": "Low",
+                    "nl": "Laag"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "pump_speed_domestic_hot_water",
+              "type": "dropdown",
+              "label": {
+                "en": "Pump speed hot water",
+                "nl": "Pompsnelheid warm water"
+              },
+              "value": "Medium",
+              "values": [
+                {
+                  "id": "High",
+                  "label": {
+                    "en": "High",
+                    "nl": "Hoog"
+                  }
+                },
+                {
+                  "id": "Medium",
+                  "label": {
+                    "en": "Medium",
+                    "nl": "Midden"
+                  }
+                },
+                {
+                  "id": "Low",
+                  "label": {
+                    "en": "Low",
+                    "nl": "Laag"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "SG Ready",
+            "nl": "SG Ready"
+          },
+          "children": [
+            {
+              "id": "sg_increase_setpoint_heating",
+              "type": "number",
+              "label": {
+                "en": "SG increase setpoint heating",
+                "nl": "SG verhoging setpoint verwarming"
+              },
+              "hint": {
+                "en": "Temperature increase when SG Ready is active (K)",
+                "nl": "Temperatuurverhoging wanneer SG Ready actief is (K)"
+              },
+              "value": 5,
+              "min": 0,
+              "max": 20,
+              "units": "K"
+            },
+            {
+              "id": "sg_increase_setpoint_domestic_hot_water",
+              "type": "number",
+              "label": {
+                "en": "SG increase setpoint hot water",
+                "nl": "SG verhoging setpoint warm water"
+              },
+              "value": 5,
+              "min": 0,
+              "max": 15,
+              "units": "K"
+            },
+            {
+              "id": "sg_decrease_setpoint_cooling",
+              "type": "number",
+              "label": {
+                "en": "SG decrease setpoint cooling",
+                "nl": "SG verlaging setpoint koeling"
+              },
+              "value": 2,
+              "min": 0,
+              "max": 20,
+              "units": "K"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "itho_amber_active_fault": {
+      "type": "string",
+      "title": {
+        "en": "Active fault",
+        "nl": "Actieve storing"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/fault.svg"
+    },
+    "itho_amber_ambient_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Outdoor temperature",
+        "nl": "Buitentemperatuur"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "°C",
+      "icon": "/assets/icons/outdoor-temp.svg",
+      "insights": true
+    },
+    "itho_amber_avg_1h_ambient_temperature": {
+      "type": "number",
+      "title": {
+        "en": "1h avg outdoor temperature",
+        "nl": "1u gem. buitentemperatuur"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "°C",
+      "icon": "/assets/icons/avg-temp.svg",
+      "insights": true
+    },
+    "itho_amber_avg_24h_ambient_temperature": {
+      "type": "number",
+      "title": {
+        "en": "24h avg outdoor temperature",
+        "nl": "24u gem. buitentemperatuur"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "°C",
+      "icon": "/assets/icons/avg-temp.svg",
+      "insights": true
+    },
+    "itho_amber_avg_4h_ambient_temperature": {
+      "type": "number",
+      "title": {
+        "en": "4h avg outdoor temperature",
+        "nl": "4u gem. buitentemperatuur"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "°C",
+      "icon": "/assets/icons/avg-temp.svg",
+      "insights": true
+    },
+    "itho_amber_compressor_speed": {
+      "type": "number",
+      "title": {
+        "en": "Compressor speed",
+        "nl": "Compressorsnelheid"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "Hz",
+      "icon": "/assets/icons/speedometer.svg",
+      "insights": true
+    },
+    "itho_amber_cooling_in_progress": {
+      "type": "boolean",
+      "title": {
+        "en": "Cooling active",
+        "nl": "Koelen actief"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/cooling.svg",
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Cooling started",
+        "nl": "Koelen gestart"
+      },
+      "insightsTitleFalse": {
+        "en": "Cooling stopped",
+        "nl": "Koelen gestopt"
+      }
+    },
+    "itho_amber_cooling_mode": {
+      "type": "boolean",
+      "title": {
+        "en": "Cooling mode",
+        "nl": "Koelmodus"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/icons/cooling.svg",
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Cooling mode enabled",
+        "nl": "Koelmodus ingeschakeld"
+      },
+      "insightsTitleFalse": {
+        "en": "Cooling mode disabled",
+        "nl": "Koelmodus uitgeschakeld"
+      }
+    },
+    "itho_amber_cooling_setpoint": {
+      "type": "number",
+      "title": {
+        "en": "Cooling setpoint",
+        "nl": "Koeling setpoint"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "thermostat",
+      "units": "°C",
+      "min": 7,
+      "max": 25,
+      "step": 1
+    },
+    "itho_amber_defrost": {
+      "type": "boolean",
+      "title": {
+        "en": "Defrost active",
+        "nl": "Ontdooien actief"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/defrost.svg",
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Defrost cycle started",
+        "nl": "Ontdooicyclus gestart"
+      },
+      "insightsTitleFalse": {
+        "en": "Defrost cycle ended",
+        "nl": "Ontdooicyclus beeindigd"
+      }
+    },
+    "itho_amber_delta_t": {
+      "type": "number",
+      "title": {
+        "en": "Heat exchanger delta T",
+        "nl": "Warmtewisselaar delta T"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "K",
+      "icon": "/assets/icons/delta.svg",
+      "insights": true
+    },
+    "itho_amber_dhw_in_progress": {
+      "type": "boolean",
+      "title": {
+        "en": "Hot water heating",
+        "nl": "Warm water opwarmen"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/hot-water.svg",
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Hot water heating started",
+        "nl": "Warm water opwarmen gestart"
+      },
+      "insightsTitleFalse": {
+        "en": "Hot water heating stopped",
+        "nl": "Warm water opwarmen gestopt"
+      }
+    },
+    "itho_amber_dhw_mode": {
+      "type": "boolean",
+      "title": {
+        "en": "Hot water mode",
+        "nl": "Warm water modus"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/icons/hot-water.svg",
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Hot water mode enabled",
+        "nl": "Warm water modus ingeschakeld"
+      },
+      "insightsTitleFalse": {
+        "en": "Hot water mode disabled",
+        "nl": "Warm water modus uitgeschakeld"
+      }
+    },
+    "itho_amber_dhw_setpoint": {
+      "type": "number",
+      "title": {
+        "en": "Hot water setpoint",
+        "nl": "Warm water setpoint"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "thermostat",
+      "units": "°C",
+      "min": 30,
+      "max": 65,
+      "step": 1
+    },
+    "itho_amber_dhw_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Hot water temperature",
+        "nl": "Warm water temperatuur"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "°C",
+      "icon": "/assets/icons/hot-water.svg",
+      "insights": true
+    },
+    "itho_amber_discharge_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Discharge temperature",
+        "nl": "Perstemperatuur"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "°C",
+      "icon": "/assets/icons/thermometer-up.svg",
+      "insights": true
+    },
+    "itho_amber_estimated_power": {
+      "type": "number",
+      "title": {
+        "en": "Estimated power",
+        "nl": "Geschat vermogen"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "W",
+      "icon": "/assets/icons/zap.svg",
+      "insights": true
+    },
+    "itho_amber_expansion_valve": {
+      "type": "number",
+      "title": {
+        "en": "Expansion valve",
+        "nl": "Expansieventiel"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "steps",
+      "icon": "/assets/icons/valve.svg",
+      "insights": true
+    },
+    "itho_amber_fan_speed": {
+      "type": "number",
+      "title": {
+        "en": "Fan speed",
+        "nl": "Ventilatorsnelheid"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "RPM",
+      "icon": "/assets/icons/fan.svg",
+      "insights": true
+    },
+    "itho_amber_flow_rate": {
+      "type": "number",
+      "title": {
+        "en": "Flow rate",
+        "nl": "Debiet"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "L/min",
+      "icon": "/assets/icons/flow.svg",
+      "insights": true
+    },
+    "itho_amber_heating_cooling_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Heating/cooling temperature",
+        "nl": "Verwarming/koeling temperatuur"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "°C",
+      "icon": "/assets/icons/thermometer.svg",
+      "insights": true
+    },
+    "itho_amber_heating_in_progress": {
+      "type": "boolean",
+      "title": {
+        "en": "Heating active",
+        "nl": "Verwarmen actief"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/heating.svg",
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Heating started",
+        "nl": "Verwarmen gestart"
+      },
+      "insightsTitleFalse": {
+        "en": "Heating stopped",
+        "nl": "Verwarmen gestopt"
+      }
+    },
+    "itho_amber_heating_mode": {
+      "type": "boolean",
+      "title": {
+        "en": "Heating mode",
+        "nl": "Verwarmingsmodus"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/icons/heating.svg",
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Heating mode enabled",
+        "nl": "Verwarmingsmodus ingeschakeld"
+      },
+      "insightsTitleFalse": {
+        "en": "Heating mode disabled",
+        "nl": "Verwarmingsmodus uitgeschakeld"
+      }
+    },
+    "itho_amber_high_pressure": {
+      "type": "number",
+      "title": {
+        "en": "High pressure",
+        "nl": "Hoge druk"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "bar",
+      "icon": "/assets/icons/pressure-high.svg",
+      "insights": true
+    },
+    "itho_amber_indoor_coil_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Indoor coil temperature",
+        "nl": "Binnenunit spoel temperatuur"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "°C",
+      "icon": "/assets/icons/coil.svg",
+      "insights": true
+    },
+    "itho_amber_inside_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Inside temperature",
+        "nl": "Binnentemperatuur"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "°C",
+      "icon": "/assets/icons/home-thermometer.svg",
+      "insights": true
+    },
+    "itho_amber_low_pressure": {
+      "type": "number",
+      "title": {
+        "en": "Low pressure",
+        "nl": "Lage druk"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "bar",
+      "icon": "/assets/icons/pressure-low.svg",
+      "insights": true
+    },
+    "itho_amber_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Working mode",
+        "nl": "Bedrijfsmodus"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "standby",
+          "title": {
+            "en": "Standby",
+            "nl": "Stand-by"
+          }
+        },
+        {
+          "id": "heating",
+          "title": {
+            "en": "Heating",
+            "nl": "Verwarmen"
+          }
+        },
+        {
+          "id": "cooling",
+          "title": {
+            "en": "Cooling",
+            "nl": "Koelen"
+          }
+        },
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto",
+            "nl": "Automatisch"
+          }
+        }
+      ]
+    },
+    "itho_amber_outdoor_coil_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Outdoor coil temperature",
+        "nl": "Buitenunit spoel temperatuur"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "°C",
+      "icon": "/assets/icons/coil.svg",
+      "insights": true
+    },
+    "itho_amber_power": {
+      "type": "number",
+      "title": {
+        "en": "Running current",
+        "nl": "Bedrijfsstroom"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "A",
+      "icon": "/assets/icons/zap.svg",
+      "insights": true
+    },
+    "itho_amber_relay_1": {
+      "type": "boolean",
+      "title": {
+        "en": "Relay 1",
+        "nl": "Relais 1"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/icons/relay.svg"
+    },
+    "itho_amber_relay_2": {
+      "type": "boolean",
+      "title": {
+        "en": "Relay 2",
+        "nl": "Relais 2"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/icons/relay.svg"
+    },
+    "itho_amber_relay_3": {
+      "type": "boolean",
+      "title": {
+        "en": "Relay 3",
+        "nl": "Relais 3"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/icons/relay.svg"
+    },
+    "itho_amber_relay_4": {
+      "type": "boolean",
+      "title": {
+        "en": "Relay 4",
+        "nl": "Relais 4"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/icons/relay.svg"
+    },
+    "itho_amber_sg_ready": {
+      "type": "boolean",
+      "title": {
+        "en": "SG Ready",
+        "nl": "SG Ready"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/grid.svg",
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "SG Ready activated",
+        "nl": "SG Ready geactiveerd"
+      },
+      "insightsTitleFalse": {
+        "en": "SG Ready deactivated",
+        "nl": "SG Ready gedeactiveerd"
+      }
+    },
+    "itho_amber_suction_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Suction temperature",
+        "nl": "Zuigtemperatuur"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "°C",
+      "icon": "/assets/icons/thermometer-down.svg",
+      "insights": true
+    },
+    "itho_amber_supply_voltage": {
+      "type": "number",
+      "title": {
+        "en": "Supply voltage",
+        "nl": "Voedingsspanning"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "V",
+      "icon": "/assets/icons/zap.svg",
+      "insights": true
+    },
+    "itho_amber_total_pulses": {
+      "type": "number",
+      "title": {
+        "en": "Total flow pulses",
+        "nl": "Totaal stroomimpulsen"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/counter.svg",
+      "insights": true
+    },
+    "itho_amber_uptime": {
+      "type": "string",
+      "title": {
+        "en": "Uptime",
+        "nl": "Bedrijfstijd"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/clock.svg",
+      "insights": false
+    },
+    "itho_amber_water_flow_switch": {
+      "type": "boolean",
+      "title": {
+        "en": "Water flow switch",
+        "nl": "Waterstroomschakelaar"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/droplet.svg",
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Water flow detected",
+        "nl": "Waterstroom gedetecteerd"
+      },
+      "insightsTitleFalse": {
+        "en": "No water flow",
+        "nl": "Geen waterstroom"
+      }
+    },
+    "itho_amber_water_inlet_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Water inlet temperature",
+        "nl": "Water inlaattemperatuur"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "°C",
+      "icon": "/assets/icons/thermometer.svg",
+      "insights": true
+    },
+    "itho_amber_water_outlet_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Water outlet temperature",
+        "nl": "Water uitlaattemperatuur"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "°C",
+      "icon": "/assets/icons/thermometer.svg",
+      "insights": true
+    },
+    "itho_amber_wifi_signal": {
+      "type": "number",
+      "title": {
+        "en": "WiFi signal",
+        "nl": "WiFi signaal"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": "dBm",
+      "icon": "/assets/icons/wifi.svg",
+      "insights": true
+    }
+  },
+  "discovery": {
+    "ithodaalderop-amber": {
+      "type": "mdns-sd",
+      "mdns-sd": {
+        "name": "esphomelib",
+        "protocol": "tcp"
+      },
+      "id": "{{host}}",
+      "conditions": [
+        [
+          {
+            "field": "txt.friendly_name",
+            "match": {
+              "type": "string",
+              "value": "Itho Daalderop Amber"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "set_working_mode",
+  "title": {
+    "en": "Set working mode",
+    "nl": "Stel bedrijfsmodus in"
+  },
+  "titleFormatted": {
+    "en": "Set working mode to [[mode]]",
+    "nl": "Stel bedrijfsmodus in op [[mode]]"
+  },
+  "hint": {
+    "en": "Set the heat pump working mode.",
+    "nl": "Stel de bedrijfsmodus van de warmtepomp in."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "dropdown",
+      "name": "mode",
+      "title": {
+        "en": "Mode",
+        "nl": "Modus"
+      },
+      "values": [
+        { "id": "Standby", "label": { "en": "Standby", "nl": "Stand-by" } },
+        { "id": "Heating", "label": { "en": "Heating", "nl": "Verwarmen" } },
+        { "id": "Cooling", "label": { "en": "Cooling", "nl": "Koelen" } },
+        { "id": "Auto", "label": { "en": "Auto", "nl": "Automatisch" } }
+      ]
+    }
+  ]
+}

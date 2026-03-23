@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Running current",
+    "nl": "Bedrijfsstroom"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "A",
+  "icon": "/assets/icons/zap.svg",
+  "insights": true
+}

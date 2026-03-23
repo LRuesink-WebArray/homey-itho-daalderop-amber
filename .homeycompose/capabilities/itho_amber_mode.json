@@ -1,0 +1,40 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Working mode",
+    "nl": "Bedrijfsmodus"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "values": [
+    {
+      "id": "standby",
+      "title": {
+        "en": "Standby",
+        "nl": "Stand-by"
+      }
+    },
+    {
+      "id": "heating",
+      "title": {
+        "en": "Heating",
+        "nl": "Verwarmen"
+      }
+    },
+    {
+      "id": "cooling",
+      "title": {
+        "en": "Cooling",
+        "nl": "Koelen"
+      }
+    },
+    {
+      "id": "auto",
+      "title": {
+        "en": "Auto",
+        "nl": "Automatisch"
+      }
+    }
+  ]
+}

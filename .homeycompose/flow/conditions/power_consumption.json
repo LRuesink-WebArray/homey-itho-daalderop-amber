@@ -1,0 +1,33 @@
+{
+  "id": "power_consumption",
+  "title": {
+    "en": "Power consumption !{{is|is not}} above ...",
+    "nl": "Stroomverbruik !{{is|is niet}} hoger dan ..."
+  },
+  "titleFormatted": {
+    "en": "Power consumption !{{is|is not}} above [[power]] A",
+    "nl": "Stroomverbruik !{{is|is niet}} hoger dan [[power]] A"
+  },
+  "hint": {
+    "en": "Check if the running current is above a specific value.",
+    "nl": "Controleer of de stroomsterkte hoger is dan een specifieke waarde."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "number",
+      "name": "power",
+      "title": {
+        "en": "Current",
+        "nl": "Stroomsterkte"
+      },
+      "min": 0,
+      "max": 20,
+      "step": 0.1
+    }
+  ]
+}

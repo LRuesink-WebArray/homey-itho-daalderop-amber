@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Inside temperature",
+    "nl": "Binnentemperatuur"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "°C",
+  "icon": "/assets/icons/home-thermometer.svg",
+  "insights": true
+}

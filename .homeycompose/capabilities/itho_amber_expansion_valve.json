@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Expansion valve",
+    "nl": "Expansieventiel"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "steps",
+  "icon": "/assets/icons/valve.svg",
+  "insights": true
+}

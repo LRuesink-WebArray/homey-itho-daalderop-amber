@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Low pressure",
+    "nl": "Lage druk"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "bar",
+  "icon": "/assets/icons/pressure-low.svg",
+  "insights": true
+}

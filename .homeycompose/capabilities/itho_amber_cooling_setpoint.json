@@ -1,0 +1,14 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Cooling setpoint",
+    "nl": "Koeling setpoint"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "thermostat",
+  "units": "°C",
+  "min": 7,
+  "max": 25,
+  "step": 1
+}

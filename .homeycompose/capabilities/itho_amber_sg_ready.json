@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "SG Ready",
+    "nl": "SG Ready"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/grid.svg",
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "SG Ready activated",
+    "nl": "SG Ready geactiveerd"
+  },
+  "insightsTitleFalse": {
+    "en": "SG Ready deactivated",
+    "nl": "SG Ready gedeactiveerd"
+  }
+}

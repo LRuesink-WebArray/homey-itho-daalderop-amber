@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Heat exchanger delta T",
+    "nl": "Warmtewisselaar delta T"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "K",
+  "icon": "/assets/icons/delta.svg",
+  "insights": true
+}

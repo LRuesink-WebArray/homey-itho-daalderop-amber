@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Fan speed",
+    "nl": "Ventilatorsnelheid"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "RPM",
+  "icon": "/assets/icons/fan.svg",
+  "insights": true
+}

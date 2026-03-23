@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Compressor speed",
+    "nl": "Compressorsnelheid"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "Hz",
+  "icon": "/assets/icons/speedometer.svg",
+  "insights": true
+}

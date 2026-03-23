@@ -1,0 +1,33 @@
+{
+  "id": "outdoor_temperature",
+  "title": {
+    "en": "Outdoor temperature !{{is|is not}} above ...",
+    "nl": "Buitentemperatuur !{{is|is niet}} hoger dan ..."
+  },
+  "titleFormatted": {
+    "en": "Outdoor temperature !{{is|is not}} above [[temperature]] °C",
+    "nl": "Buitentemperatuur !{{is|is niet}} hoger dan [[temperature]] °C"
+  },
+  "hint": {
+    "en": "Check if the outdoor temperature is above a specific value.",
+    "nl": "Controleer of de buitentemperatuur hoger is dan een specifieke waarde."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "number",
+      "name": "temperature",
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur"
+      },
+      "min": -40,
+      "max": 50,
+      "step": 0.5
+    }
+  ]
+}

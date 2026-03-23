@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Supply voltage",
+    "nl": "Voedingsspanning"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "V",
+  "icon": "/assets/icons/zap.svg",
+  "insights": true
+}

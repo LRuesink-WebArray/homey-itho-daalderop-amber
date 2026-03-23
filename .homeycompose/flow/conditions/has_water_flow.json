@@ -1,0 +1,18 @@
+{
+  "id": "has_water_flow",
+  "title": {
+    "en": "Water flow !{{is|is not}} detected",
+    "nl": "Waterstroom !{{is|is niet}} gedetecteerd"
+  },
+  "hint": {
+    "en": "Check if there is water flow in the system.",
+    "nl": "Controleer of er waterstroom is in het systeem."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    }
+  ]
+}

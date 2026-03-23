@@ -1,0 +1,12 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Total flow pulses",
+    "nl": "Totaal stroomimpulsen"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/counter.svg",
+  "insights": true
+}

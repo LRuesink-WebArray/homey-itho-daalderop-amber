@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g id="droplet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M32,6 C32,6 48,24 48,38 C48,46.836556 40.836556,54 32,54 C23.163444,54 16,46.836556 16,38 C16,24 32,6 32,6 Z M32,14 C32,14 20,28 20,38 C20,44.627417 25.372583,50 32,50 C38.627417,50 44,44.627417 44,38 C44,28 32,14 32,14 Z" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg>

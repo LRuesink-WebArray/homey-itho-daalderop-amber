@@ -1,0 +1,36 @@
+{
+  "id": "mode_is",
+  "title": {
+    "en": "Working mode !{{is|is not}} ...",
+    "nl": "Bedrijfsmodus !{{is|is niet}} ..."
+  },
+  "titleFormatted": {
+    "en": "Working mode !{{is|is not}} [[mode]]",
+    "nl": "Bedrijfsmodus !{{is|is niet}} [[mode]]"
+  },
+  "hint": {
+    "en": "Check if the heat pump is in a specific working mode.",
+    "nl": "Controleer of de warmtepomp in een specifieke bedrijfsmodus staat."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "dropdown",
+      "name": "mode",
+      "title": {
+        "en": "Mode",
+        "nl": "Modus"
+      },
+      "values": [
+        { "id": "standby", "label": { "en": "Standby", "nl": "Stand-by" } },
+        { "id": "heating", "label": { "en": "Heating", "nl": "Verwarmen" } },
+        { "id": "cooling", "label": { "en": "Cooling", "nl": "Koelen" } },
+        { "id": "auto", "label": { "en": "Auto", "nl": "Automatisch" } }
+      ]
+    }
+  ]
+}

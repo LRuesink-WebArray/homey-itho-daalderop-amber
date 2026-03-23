@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Defrost active",
+    "nl": "Ontdooien actief"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/defrost.svg",
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Defrost cycle started",
+    "nl": "Ontdooicyclus gestart"
+  },
+  "insightsTitleFalse": {
+    "en": "Defrost cycle ended",
+    "nl": "Ontdooicyclus beeindigd"
+  }
+}

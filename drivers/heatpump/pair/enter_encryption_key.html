@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #007AFF;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #007AFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .hint {
+      font-size: 12px;
+      color: #999;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1 data-i18n="pair.encryption.title">Encryption Key Required</h1>
+  <p data-i18n="pair.encryption.description">This device requires an encryption key. Enter the API encryption key from your ESPHome configuration.</p>
+  
+  <div class="form-group">
+    <label for="key" data-i18n="pair.encryption.label">Encryption Key</label>
+    <input type="text" id="key" placeholder="Base64 encoded key...">
+    <p class="hint" data-i18n="pair.encryption.hint">Find this in your ESPHome YAML under api: encryption: key:</p>
+  </div>
+  
+  <button id="submit" data-i18n="pair.encryption.submit">Continue</button>
+
+  <script>
+    function onHomeyReady(Homey) {
+      Homey.ready();
+      
+      document.getElementById('submit').addEventListener('click', function() {
+        const key = document.getElementById('key').value.trim();
+        if (key) {
+          Homey.emit('encryption_key_entered', { key: key });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

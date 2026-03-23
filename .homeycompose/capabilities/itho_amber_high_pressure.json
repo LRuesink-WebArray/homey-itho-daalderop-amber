@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "High pressure",
+    "nl": "Hoge druk"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "bar",
+  "icon": "/assets/icons/pressure-high.svg",
+  "insights": true
+}

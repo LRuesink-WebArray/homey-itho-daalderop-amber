@@ -1,0 +1,36 @@
+{
+  "id": "relay_is_on",
+  "title": {
+    "en": "Relay !{{is|is not}} on",
+    "nl": "Relais !{{is|is niet}} aan"
+  },
+  "titleFormatted": {
+    "en": "[[relay]] !{{is|is not}} on",
+    "nl": "[[relay]] !{{is|is niet}} aan"
+  },
+  "hint": {
+    "en": "Check if a relay is currently on.",
+    "nl": "Controleer of een relais momenteel aan is."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=heatpump"
+    },
+    {
+      "type": "dropdown",
+      "name": "relay",
+      "title": {
+        "en": "Relay",
+        "nl": "Relais"
+      },
+      "values": [
+        { "id": "1", "label": { "en": "Relay 1", "nl": "Relais 1" } },
+        { "id": "2", "label": { "en": "Relay 2", "nl": "Relais 2" } },
+        { "id": "3", "label": { "en": "Relay 3", "nl": "Relais 3" } },
+        { "id": "4", "label": { "en": "Relay 4", "nl": "Relais 4" } }
+      ]
+    }
+  ]
+}

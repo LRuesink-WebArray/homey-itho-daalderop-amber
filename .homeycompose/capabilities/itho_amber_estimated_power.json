@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Estimated power",
+    "nl": "Geschat vermogen"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "W",
+  "icon": "/assets/icons/zap.svg",
+  "insights": true
+}

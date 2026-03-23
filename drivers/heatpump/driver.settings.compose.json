@@ -1,0 +1,464 @@
+[
+  {
+    "type": "group",
+    "label": {
+      "en": "Domestic Hot Water",
+      "nl": "Warm tapwater"
+    },
+    "children": [
+      {
+        "id": "domestic_hot_water_setpoint",
+        "type": "number",
+        "label": {
+          "en": "Hot water setpoint",
+          "nl": "Warm water setpoint"
+        },
+        "hint": {
+          "en": "Target temperature for domestic hot water (°C)",
+          "nl": "Doeltemperatuur voor warm tapwater (°C)"
+        },
+        "value": 50,
+        "min": 0,
+        "max": 100,
+        "units": "°C"
+      },
+      {
+        "id": "domestic_hot_water_reheating_point",
+        "type": "number",
+        "label": {
+          "en": "Hot water reheating point",
+          "nl": "Warm water herverwarmingspunt"
+        },
+        "hint": {
+          "en": "Temperature at which reheating starts (°C)",
+          "nl": "Temperatuur waarbij herverwarming start (°C)"
+        },
+        "value": 45,
+        "min": 0,
+        "max": 100,
+        "units": "°C"
+      },
+      {
+        "id": "use_domestic_hot_water_timer",
+        "type": "checkbox",
+        "label": {
+          "en": "Use hot water timer",
+          "nl": "Gebruik warm water timer"
+        },
+        "value": false
+      },
+      {
+        "id": "domestic_hot_water_eco_mode",
+        "type": "checkbox",
+        "label": {
+          "en": "ECO mode",
+          "nl": "ECO modus"
+        },
+        "value": false
+      },
+      {
+        "id": "minimum_ambient_temperature_to_start_domestic_hot_water_eco_mode",
+        "type": "number",
+        "label": {
+          "en": "Minimum ambient temperature for ECO mode",
+          "nl": "Minimum buitentemperatuur voor ECO modus"
+        },
+        "hint": {
+          "en": "ECO mode only activates above this outdoor temperature (°C)",
+          "nl": "ECO modus wordt alleen geactiveerd boven deze buitentemperatuur (°C)"
+        },
+        "value": 10,
+        "min": -30,
+        "max": 40,
+        "units": "°C"
+      },
+      {
+        "id": "use_anti_legionella_mode",
+        "type": "checkbox",
+        "label": {
+          "en": "Anti-legionella mode",
+          "nl": "Anti-legionella modus"
+        },
+        "value": true
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Heating",
+      "nl": "Verwarming"
+    },
+    "children": [
+      {
+        "id": "heating_setpoint",
+        "type": "number",
+        "label": {
+          "en": "Heating setpoint",
+          "nl": "Verwarming setpoint"
+        },
+        "hint": {
+          "en": "Target water temperature for heating (°C)",
+          "nl": "Doeltemperatuur water voor verwarming (°C)"
+        },
+        "value": 35,
+        "min": 0,
+        "max": 100,
+        "units": "°C"
+      },
+      {
+        "id": "use_heating_curve",
+        "type": "checkbox",
+        "label": {
+          "en": "Use heating curve",
+          "nl": "Gebruik stooklijn"
+        },
+        "value": false
+      },
+      {
+        "id": "circuit_1_maximum_temperature",
+        "type": "number",
+        "label": {
+          "en": "Circuit 1 maximum temperature",
+          "nl": "Circuit 1 maximale temperatuur"
+        },
+        "value": 55,
+        "min": 0,
+        "max": 100,
+        "units": "°C"
+      },
+      {
+        "id": "circuit_1_minimum_temperature",
+        "type": "number",
+        "label": {
+          "en": "Circuit 1 minimum temperature",
+          "nl": "Circuit 1 minimale temperatuur"
+        },
+        "value": 20,
+        "min": 0,
+        "max": 100,
+        "units": "°C"
+      },
+      {
+        "id": "reduced_mode_timer",
+        "type": "checkbox",
+        "label": {
+          "en": "Reduced mode timer",
+          "nl": "Gereduceerde modus timer"
+        },
+        "value": false
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Cooling",
+      "nl": "Koeling"
+    },
+    "children": [
+      {
+        "id": "cooling_setpoint",
+        "type": "number",
+        "label": {
+          "en": "Cooling setpoint",
+          "nl": "Koeling setpoint"
+        },
+        "hint": {
+          "en": "Target water temperature for cooling (°C)",
+          "nl": "Doeltemperatuur water voor koeling (°C)"
+        },
+        "value": 18,
+        "min": 0,
+        "max": 30,
+        "units": "°C"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Heating Curve",
+      "nl": "Stooklijn"
+    },
+    "children": [
+      {
+        "id": "heating_curve_ambient_temperature_1",
+        "type": "number",
+        "label": {
+          "en": "Ambient temperature point 1",
+          "nl": "Buitentemperatuur punt 1"
+        },
+        "value": -15,
+        "min": -40,
+        "max": 40,
+        "units": "°C"
+      },
+      {
+        "id": "heating_curve_water_temperature_1",
+        "type": "number",
+        "label": {
+          "en": "Water temperature point 1",
+          "nl": "Watertemperatuur punt 1"
+        },
+        "value": 45,
+        "min": 0,
+        "max": 100,
+        "units": "°C"
+      },
+      {
+        "id": "heating_curve_ambient_temperature_2",
+        "type": "number",
+        "label": {
+          "en": "Ambient temperature point 2",
+          "nl": "Buitentemperatuur punt 2"
+        },
+        "value": -5,
+        "min": -40,
+        "max": 40,
+        "units": "°C"
+      },
+      {
+        "id": "heating_curve_water_temperature_2",
+        "type": "number",
+        "label": {
+          "en": "Water temperature point 2",
+          "nl": "Watertemperatuur punt 2"
+        },
+        "value": 40,
+        "min": 0,
+        "max": 100,
+        "units": "°C"
+      },
+      {
+        "id": "heating_curve_ambient_temperature_3",
+        "type": "number",
+        "label": {
+          "en": "Ambient temperature point 3",
+          "nl": "Buitentemperatuur punt 3"
+        },
+        "value": 5,
+        "min": -40,
+        "max": 40,
+        "units": "°C"
+      },
+      {
+        "id": "heating_curve_water_temperature_3",
+        "type": "number",
+        "label": {
+          "en": "Water temperature point 3",
+          "nl": "Watertemperatuur punt 3"
+        },
+        "value": 35,
+        "min": 0,
+        "max": 100,
+        "units": "°C"
+      },
+      {
+        "id": "heating_curve_ambient_temperature_4",
+        "type": "number",
+        "label": {
+          "en": "Ambient temperature point 4",
+          "nl": "Buitentemperatuur punt 4"
+        },
+        "value": 10,
+        "min": -40,
+        "max": 40,
+        "units": "°C"
+      },
+      {
+        "id": "heating_curve_water_temperature_4",
+        "type": "number",
+        "label": {
+          "en": "Water temperature point 4",
+          "nl": "Watertemperatuur punt 4"
+        },
+        "value": 30,
+        "min": 0,
+        "max": 100,
+        "units": "°C"
+      },
+      {
+        "id": "heating_curve_ambient_temperature_5",
+        "type": "number",
+        "label": {
+          "en": "Ambient temperature point 5",
+          "nl": "Buitentemperatuur punt 5"
+        },
+        "value": 20,
+        "min": -40,
+        "max": 40,
+        "units": "°C"
+      },
+      {
+        "id": "heating_curve_water_temperature_5",
+        "type": "number",
+        "label": {
+          "en": "Water temperature point 5",
+          "nl": "Watertemperatuur punt 5"
+        },
+        "value": 25,
+        "min": 0,
+        "max": 100,
+        "units": "°C"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Delta T Control",
+      "nl": "Delta T Regeling"
+    },
+    "children": [
+      {
+        "id": "delta_t_to_stop_hp",
+        "type": "number",
+        "label": {
+          "en": "Delta T to stop heat pump",
+          "nl": "Delta T om warmtepomp te stoppen"
+        },
+        "hint": {
+          "en": "Temperature difference at which heat pump stops (K)",
+          "nl": "Temperatuurverschil waarbij warmtepomp stopt (K)"
+        },
+        "value": 2,
+        "min": 0,
+        "max": 20,
+        "units": "K"
+      },
+      {
+        "id": "delta_t_to_restart_hp",
+        "type": "number",
+        "label": {
+          "en": "Delta T to restart heat pump",
+          "nl": "Delta T om warmtepomp te herstarten"
+        },
+        "hint": {
+          "en": "Temperature difference at which heat pump restarts (K)",
+          "nl": "Temperatuurverschil waarbij warmtepomp herstart (K)"
+        },
+        "value": 3,
+        "min": 0,
+        "max": 20,
+        "units": "K"
+      },
+      {
+        "id": "delta_t_to_lower_compressor_speed",
+        "type": "number",
+        "label": {
+          "en": "Delta T to lower compressor speed",
+          "nl": "Delta T om compressorsnelheid te verlagen"
+        },
+        "hint": {
+          "en": "Temperature difference at which compressor speed is reduced (K)",
+          "nl": "Temperatuurverschil waarbij compressorsnelheid wordt verlaagd (K)"
+        },
+        "value": 1,
+        "min": 0,
+        "max": 20,
+        "units": "K"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Pump Speeds",
+      "nl": "Pompsnelheden"
+    },
+    "children": [
+      {
+        "id": "pump_speed_heating",
+        "type": "dropdown",
+        "label": {
+          "en": "Pump speed heating",
+          "nl": "Pompsnelheid verwarming"
+        },
+        "value": "Medium",
+        "values": [
+          { "id": "High", "label": { "en": "High", "nl": "Hoog" } },
+          { "id": "Medium", "label": { "en": "Medium", "nl": "Midden" } },
+          { "id": "Low", "label": { "en": "Low", "nl": "Laag" } }
+        ]
+      },
+      {
+        "id": "pump_speed_cooling",
+        "type": "dropdown",
+        "label": {
+          "en": "Pump speed cooling",
+          "nl": "Pompsnelheid koeling"
+        },
+        "value": "Medium",
+        "values": [
+          { "id": "High", "label": { "en": "High", "nl": "Hoog" } },
+          { "id": "Medium", "label": { "en": "Medium", "nl": "Midden" } },
+          { "id": "Low", "label": { "en": "Low", "nl": "Laag" } }
+        ]
+      },
+      {
+        "id": "pump_speed_domestic_hot_water",
+        "type": "dropdown",
+        "label": {
+          "en": "Pump speed hot water",
+          "nl": "Pompsnelheid warm water"
+        },
+        "value": "Medium",
+        "values": [
+          { "id": "High", "label": { "en": "High", "nl": "Hoog" } },
+          { "id": "Medium", "label": { "en": "Medium", "nl": "Midden" } },
+          { "id": "Low", "label": { "en": "Low", "nl": "Laag" } }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "SG Ready",
+      "nl": "SG Ready"
+    },
+    "children": [
+      {
+        "id": "sg_increase_setpoint_heating",
+        "type": "number",
+        "label": {
+          "en": "SG increase setpoint heating",
+          "nl": "SG verhoging setpoint verwarming"
+        },
+        "hint": {
+          "en": "Temperature increase when SG Ready is active (K)",
+          "nl": "Temperatuurverhoging wanneer SG Ready actief is (K)"
+        },
+        "value": 5,
+        "min": 0,
+        "max": 20,
+        "units": "K"
+      },
+      {
+        "id": "sg_increase_setpoint_domestic_hot_water",
+        "type": "number",
+        "label": {
+          "en": "SG increase setpoint hot water",
+          "nl": "SG verhoging setpoint warm water"
+        },
+        "value": 5,
+        "min": 0,
+        "max": 15,
+        "units": "K"
+      },
+      {
+        "id": "sg_decrease_setpoint_cooling",
+        "type": "number",
+        "label": {
+          "en": "SG decrease setpoint cooling",
+          "nl": "SG verlaging setpoint koeling"
+        },
+        "value": 2,
+        "min": 0,
+        "max": 20,
+        "units": "K"
+      }
+    ]
+  }
+]

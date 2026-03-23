@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Water inlet temperature",
+    "nl": "Water inlaattemperatuur"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "°C",
+  "icon": "/assets/icons/thermometer.svg",
+  "insights": true
+}

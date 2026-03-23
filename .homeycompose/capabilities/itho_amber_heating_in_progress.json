@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Heating active",
+    "nl": "Verwarmen actief"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/heating.svg",
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Heating started",
+    "nl": "Verwarmen gestart"
+  },
+  "insightsTitleFalse": {
+    "en": "Heating stopped",
+    "nl": "Verwarmen gestopt"
+  }
+}

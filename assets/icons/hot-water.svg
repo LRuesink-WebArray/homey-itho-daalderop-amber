@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g id="hot-water" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M30,6 L34,6 L34,16 L30,16 L30,6 Z M32,18 C32,18 48,32 48,44 C48,52.836556 40.836556,60 32,60 C23.163444,60 16,52.836556 16,44 C16,32 32,18 32,18 Z M32,26 C32,26 20,36 20,44 C20,50.627417 25.372583,56 32,56 C38.627417,56 44,50.627417 44,44 C44,36 32,26 32,26 Z" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg>

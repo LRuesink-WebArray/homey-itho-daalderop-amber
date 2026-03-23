@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Water flow switch",
+    "nl": "Waterstroomschakelaar"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/droplet.svg",
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Water flow detected",
+    "nl": "Waterstroom gedetecteerd"
+  },
+  "insightsTitleFalse": {
+    "en": "No water flow",
+    "nl": "Geen waterstroom"
+  }
+}
