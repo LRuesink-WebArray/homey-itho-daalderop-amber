@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Actual cooling setpoint zone 2",
+    "nl": "Werkelijk koeling setpoint zone 2"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "\u00b0C",
+  "icon": "/assets/icons/thermometer-down.svg",
+  "insights": true
+}

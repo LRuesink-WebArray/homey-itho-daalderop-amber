@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Circuit 1 temperature (TV1)",
+    "nl": "Circuit 1 temperatuur (TV1)"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "\u00b0C",
+  "icon": "/assets/icons/valve.svg",
+  "insights": true
+}

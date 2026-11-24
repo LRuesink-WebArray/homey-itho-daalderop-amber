@@ -1,8 +1,8 @@
 {
   "type": "number",
   "title": {
-    "en": "Outdoor coil temperature",
-    "nl": "Buitenunit spoel temperatuur"
+    "en": "Outdoor coil temperature (TP)",
+    "nl": "Buitenunit spoel temperatuur (TP)"
   },
   "getable": true,
   "setable": false,

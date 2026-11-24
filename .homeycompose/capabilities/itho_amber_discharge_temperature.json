@@ -1,8 +1,8 @@
 {
   "type": "number",
   "title": {
-    "en": "Discharge temperature",
-    "nl": "Perstemperatuur"
+    "en": "Discharge temperature (TD)",
+    "nl": "Perstemperatuur (TD)"
   },
   "getable": true,
   "setable": false,

@@ -1,8 +1,8 @@
 {
   "type": "number",
   "title": {
-    "en": "Hot water temperature",
-    "nl": "Warm water temperatuur"
+    "en": "Hot water temperature (TW)",
+    "nl": "Warm water temperatuur (TW)"
   },
   "getable": true,
   "setable": false,

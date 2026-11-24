@@ -1,8 +1,8 @@
 {
   "type": "number",
   "title": {
-    "en": "Water outlet temperature",
-    "nl": "Water uitlaattemperatuur"
+    "en": "Water outlet temperature (TUO)",
+    "nl": "Water uitlaattemperatuur (TUO)"
   },
   "getable": true,
   "setable": false,

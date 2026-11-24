@@ -1,8 +1,8 @@
 {
   "type": "number",
   "title": {
-    "en": "Suction temperature",
-    "nl": "Zuigtemperatuur"
+    "en": "Suction temperature (TS)",
+    "nl": "Zuigtemperatuur (TS)"
   },
   "getable": true,
   "setable": false,

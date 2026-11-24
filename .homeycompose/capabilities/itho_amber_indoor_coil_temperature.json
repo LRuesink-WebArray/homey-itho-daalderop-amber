@@ -1,8 +1,8 @@
 {
   "type": "number",
   "title": {
-    "en": "Indoor coil temperature",
-    "nl": "Binnenunit spoel temperatuur"
+    "en": "Indoor coil temperature (TUP)",
+    "nl": "Binnenunit spoel temperatuur (TUP)"
   },
   "getable": true,
   "setable": false,

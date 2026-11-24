@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Actual heating setpoint",
+    "nl": "Werkelijk verwarming setpoint"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": "\u00b0C",
+  "icon": "/assets/icons/thermometer-up.svg",
+  "insights": true
+}

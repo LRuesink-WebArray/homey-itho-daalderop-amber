@@ -8,7 +8,7 @@
   "capabilities": [
     "measure_temperature.heating_cooling",
     "onoff",
-    "measure_temperature",
+    "itho_amber_water_outlet_temperature",
     "target_temperature",
     "itho_amber_mode",
     "itho_amber_dhw_mode",
@@ -25,7 +25,6 @@
     "itho_amber_dhw_setpoint",
     "itho_amber_cooling_setpoint",
     "itho_amber_water_inlet_temperature",
-    "itho_amber_water_outlet_temperature",
     "itho_amber_flow_rate",
     "itho_amber_fan_speed",
     "itho_amber_outdoor_coil_temperature",
@@ -41,6 +40,8 @@
     "itho_amber_expansion_valve",
     "itho_amber_supply_voltage",
     "itho_amber_estimated_power",
+    "itho_amber_actual_setpoint_heating",
+    "itho_amber_actual_setpoint_cooling",
     "itho_amber_delta_t",
     "itho_amber_sg_ready",
     "itho_amber_water_flow_switch",
@@ -57,13 +58,6 @@
         "nl": "Systeem aan/uit"
       },
       "uiQuickAction": false
-    },
-    "measure_temperature": {
-      "title": {
-        "en": "Water outlet temperature",
-        "nl": "Water uitlaattemperatuur"
-      },
-      "units": "°C"
     },
     "target_temperature": {
       "title": {
@@ -83,8 +77,8 @@
     },
     "measure_temperature.heating_cooling": {
       "title": {
-        "en": "Heating/cooling temperature",
-        "nl": "Verwarming/koeling temperatuur"
+        "en": "Heating/cooling temperature (TC)",
+        "nl": "Verwarming/koeling temperatuur (TC)"
       },
       "units": "°C"
     },

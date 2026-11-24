@@ -1,8 +1,8 @@
 {
   "type": "number",
   "title": {
-    "en": "Heating/cooling temperature",
-    "nl": "Verwarming/koeling temperatuur"
+    "en": "Heating/cooling temperature (TC)",
+    "nl": "Verwarming/koeling temperatuur (TC)"
   },
   "getable": true,
   "setable": false,

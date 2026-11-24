@@ -42,7 +42,7 @@ const ENTITY_TO_CAPABILITY: Record<string, string> = {
   [EntityIds.DEFROST]: 'itho_amber_defrost',
   
   // Temperatures
-  [EntityIds.HEAT_EXCHANGER_WATER_OUTLET_TEMPERATURE]: 'measure_temperature',
+  [EntityIds.HEAT_EXCHANGER_WATER_OUTLET_TEMPERATURE]: 'itho_amber_water_outlet_temperature',
   [EntityIds.DOMESTIC_HOT_WATER_TEMPERATURE]: 'itho_amber_dhw_temperature',
   [EntityIds.AMBIENT_TEMPERATURE]: 'itho_amber_ambient_temperature',
   [EntityIds.HEAT_EXCHANGER_WATER_INLET_TEMPERATURE]: 'itho_amber_water_inlet_temperature',
@@ -59,6 +59,12 @@ const ENTITY_TO_CAPABILITY: Record<string, string> = {
   [EntityIds.EXPANSION_VALVE_SETTING]: 'itho_amber_expansion_valve',
   [EntityIds.SUPPLY_VOLTAGE]: 'itho_amber_supply_voltage',
   
+  // Actual setpoints
+  [EntityIds.ACTUAL_SETPOINT_HEATING_ZONE_1]: 'itho_amber_actual_setpoint_heating',
+  [EntityIds.ACTUAL_SETPOINT_COOLING_ZONE_1]: 'itho_amber_actual_setpoint_cooling',
+  [EntityIds.ACTUAL_SETPOINT_HEATING_ZONE_2]: 'itho_amber_actual_setpoint_heating_2',
+  [EntityIds.ACTUAL_SETPOINT_COOLING_ZONE_2]: 'itho_amber_actual_setpoint_cooling_2',
+  
   // Coil temperatures
   [EntityIds.OUTDOOR_COIL_TEMPERATURE]: 'itho_amber_outdoor_coil_temperature',
   [EntityIds.INDOOR_COIL_TEMPERATURE]: 'itho_amber_indoor_coil_temperature',
@@ -66,6 +72,8 @@ const ENTITY_TO_CAPABILITY: Record<string, string> = {
   [EntityIds.SUCTION_TEMPERATURE]: 'itho_amber_suction_temperature',
   [EntityIds.INSIDE_TEMPERATURE]: 'itho_amber_inside_temperature',
   [EntityIds.HEATING_COOLING_TEMPERATURE]: 'measure_temperature.heating_cooling',
+  [EntityIds.HEATING_COOLING_CIRCUIT_1_TEMPERATURE]: 'itho_amber_circuit_1_temperature',
+  [EntityIds.HEATING_COOLING_CIRCUIT_2_TEMPERATURE]: 'itho_amber_circuit_2_temperature',
   
   // Average ambient temperatures
   [EntityIds.AVERAGE_1H_AMBIENT_TEMPERATURE]: 'itho_amber_avg_1h_ambient_temperature',
@@ -82,6 +90,7 @@ const ENTITY_TO_CAPABILITY: Record<string, string> = {
   // Status sensors
   [EntityIds.SG_READY]: 'itho_amber_sg_ready',
   [EntityIds.WATER_FLOW_SWITCH]: 'itho_amber_water_flow_switch',
+  [EntityIds.HEATING_SWITCH_CIRCUIT_2]: 'itho_amber_heating_switch_circuit_2',
   
   // Flow sensor
   [EntityIds.PULSE_METER]: 'itho_amber_flow_rate',
@@ -174,9 +183,53 @@ class HeatPumpDevice extends Homey.Device {
 
   async onInit(): Promise<void> {
     this.log('Heat pump device initializing...');
+
+    await this.migrateCapabilities();
     
     // Register capability listeners
     this.registerCapabilityListeners();
+  }
+
+  private static readonly CURRENT_STORE_VERSION = 1;
+
+  private async migrateCapabilities(): Promise<void> {
+    const storeVersion: number = this.getStoreValue('version') ?? 0;
+
+    if (storeVersion < 1) {
+      await this.migrateToV1();
+    }
+
+    if (storeVersion < HeatPumpDevice.CURRENT_STORE_VERSION) {
+      await this.setStoreValue('version', HeatPumpDevice.CURRENT_STORE_VERSION);
+      this.log(`Migration complete, store version is now ${HeatPumpDevice.CURRENT_STORE_VERSION}`);
+    }
+  }
+
+  private async migrateToV1(): Promise<void> {
+    this.log('Running migration to v1...');
+
+    // Replace bare measure_temperature with custom capability
+    if (this.hasCapability('measure_temperature')) {
+      await this.removeCapability('measure_temperature');
+      this.log('Migrated: removed measure_temperature');
+    }
+    
+    if (!this.hasCapability('itho_amber_water_outlet_temperature')) {
+      await this.addCapability('itho_amber_water_outlet_temperature');
+      this.log('Migrated: added itho_amber_water_outlet_temperature');
+    }
+
+    // Add actual setpoint capabilities
+    const newCapabilities = [
+      'itho_amber_actual_setpoint_heating',
+      'itho_amber_actual_setpoint_cooling',
+    ];
+    for (const cap of newCapabilities) {
+      if (!this.hasCapability(cap)) {
+        await this.addCapability(cap);
+        this.log(`Migrated: added ${cap}`);
+      }
+    }
   }
 
   private registerCapabilityListeners(): void {
@@ -377,6 +430,27 @@ class HeatPumpDevice extends Homey.Device {
         }
       }
     }
+
+    // Check for optional zone 2 / mixing valve entities
+    const optionalEntities: [string, string][] = [
+      [EntityIds.HEATING_COOLING_CIRCUIT_1_TEMPERATURE, 'itho_amber_circuit_1_temperature'],
+      [EntityIds.HEATING_COOLING_CIRCUIT_2_TEMPERATURE, 'itho_amber_circuit_2_temperature'],
+      [EntityIds.ACTUAL_SETPOINT_HEATING_ZONE_2, 'itho_amber_actual_setpoint_heating_2'],
+      [EntityIds.ACTUAL_SETPOINT_COOLING_ZONE_2, 'itho_amber_actual_setpoint_cooling_2'],
+      [EntityIds.HEATING_SWITCH_CIRCUIT_2, 'itho_amber_heating_switch_circuit_2'],
+    ];
+
+    for (const [entityId, capabilityId] of optionalEntities) {
+      if (this.entityMap[entityId]) {
+        if (!this.hasCapability(capabilityId)) {
+          await this.addCapability(capabilityId);
+          this.log(`Added capability ${capabilityId}`);
+        }
+      } else if (this.hasCapability(capabilityId)) {
+        await this.removeCapability(capabilityId);
+        this.log(`Removed capability ${capabilityId}`);
+      }
+    }
   }
 
   private setupEventHandlers(): void {
@@ -395,18 +469,18 @@ class HeatPumpDevice extends Homey.Device {
     });
 
     // Listen for state updates from ESPHome
-    this.api.on('state', (update: { key: number; state?: unknown; value?: unknown; missingState?: boolean }) => {
+    this.api.on('state', (update: { key: number; state?: unknown; value?: unknown; missing_state?: boolean }) => {
       if (!update || update.key === undefined) return;
       
       // Skip updates where state is missing/unavailable
-      if (update.missingState === true) {
+      if (update.missing_state === true) {
         return;
       }
       
       const value = update.state ?? update.value;
       
-      // Skip null/undefined values
-      if (value === null || value === undefined) {
+      // Skip null/undefined/NaN values
+      if (value === null || value === undefined || (typeof value === 'number' && isNaN(value))) {
         return;
       }
       
@@ -518,6 +592,7 @@ class HeatPumpDevice extends Homey.Device {
 
   private roundValue(value: unknown): unknown {
     if (typeof value === 'number') {
+      if (isNaN(value)) return null;
       return Math.round(value * 100) / 100;
     }
     return value;

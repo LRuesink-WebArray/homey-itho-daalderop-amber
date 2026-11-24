@@ -1,8 +1,8 @@
 {
   "type": "number",
   "title": {
-    "en": "Water inlet temperature",
-    "nl": "Water inlaattemperatuur"
+    "en": "Water inlet temperature (TUI)",
+    "nl": "Water inlaattemperatuur (TUI)"
   },
   "getable": true,
   "setable": false,

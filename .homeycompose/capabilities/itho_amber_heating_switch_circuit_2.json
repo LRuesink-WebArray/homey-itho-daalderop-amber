@@ -1,0 +1,12 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Heating switch circuit 2",
+    "nl": "Verwarmingsschakelaar circuit 2"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/heating.svg",
+  "insights": true
+}

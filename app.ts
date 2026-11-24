@@ -57,7 +57,7 @@ export default class IthoAmberApp extends Homey.App {
     this.homey.flow.getConditionCard('water_temperature')
       .registerRunListener(async (args) => {
         const device = args.device;
-        const temp = device.getCapabilityValue('measure_temperature');
+        const temp = device.getCapabilityValue('itho_amber_water_outlet_temperature');
         return typeof temp === 'number' && temp > args.temperature;
       });
 

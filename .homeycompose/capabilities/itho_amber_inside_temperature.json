@@ -1,8 +1,8 @@
 {
   "type": "number",
   "title": {
-    "en": "Inside temperature",
-    "nl": "Binnentemperatuur"
+    "en": "Inside temperature (TR)",
+    "nl": "Binnentemperatuur (TR)"
   },
   "getable": true,
   "setable": false,
